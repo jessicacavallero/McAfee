@@ -22,7 +22,7 @@ public:
     
 private:
 
-  int numdevirus;
+  char caso;
  
 
 

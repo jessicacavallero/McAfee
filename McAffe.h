@@ -13,17 +13,20 @@ class McAffe
     
 public:
 
-    McAffe( int );
+    McAffe( );
+    
     ~McAffe();
     
-    void setBusca( int );
-    int numbusca;
+    void verificarVirus( int );
+    
+   
     
     
 private:
 
-  char caso;
- 
+   
+  int numbinfectado;   
+
 
 
 };

@@ -8,12 +8,15 @@ McAffe::McAffe( int numbinfectado )
     
 }
 
+
 McAffe::McAffe(  )
 {
     
     
     
 }
+
+
 
 McAffe::~McAffe()
 {
@@ -38,7 +41,28 @@ McAffe::~McAffe()
     
 }
 
-void McAffe:: ();
+void McAffe::adicionarVirus( char nomedovirus )
+{
+    
+ 
+    std::cout << " Qual é o nome do virus ?\n";
+    std::cin >> nomedovirus;
+    std::cout << " Obrigado ,pela sua ajuda , o virus '"<< nomedovirus << "' foi colocado no nosso banco de dados com sucesso!\n";
+
+    
+}
+    
+    
+void McAffe::adicionarVirus( int idvirus )
+{
+    
+
+    idvirus = rand();
+    
+    cout << " O ID do seu vírus é " << idvirus << ".";   
+    
+    
+}
 
 
 

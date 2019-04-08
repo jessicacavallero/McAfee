@@ -9,14 +9,18 @@ using std::cin;
 int main(int argc, char **argv)
 {
     
-    cout << "Verifique a possibilidade do seu computador está infectado.\n"; << enld
+    cout << "Verifique a possibilidade do seu computador está infectado.\n"; 
     
     McAffe virus;
+    McAffe nome;
+    McAffe id;
     
     int pergunta;
     int resposta1;
     int resposta2;
     int resposta3;
+    int atualizacao;
+    
     
     
     cout << "Você utiliza algum tipo de antivirus?\n";
@@ -73,6 +77,25 @@ int main(int argc, char **argv)
         
     }
     
+   
+    
+   
+    std::cout << "Ajude-nos a atualizar o nosso banco de dados!\nVocê tem conhecimento sobre algum virus?  tiver adicione as informaçoes necessarias.\n";
+    std::cout << "1-Atualizar\n";
+    std::cout << "0-Sair\n";
+    std::cin >> atualizacao;
+    
+    if (atualizacao == 1)
+   {
+         
+            nome.adicionarVirus( atualizacao );
+            
+     
+   }   
+
+            id.adicionarVirus( idvirus );
+    
     return 0;
     
 }
+

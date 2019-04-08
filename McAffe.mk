@@ -5,22 +5,22 @@
 ## Debug
 ProjectName            :=McAffe
 ConfigurationName      :=Debug
-WorkspacePath          :=C:/Users/KURUMI.LAB4-PC04/Music/antivirus
-ProjectPath            :=C:/Users/KURUMI.LAB4-PC04/Music/antivirus/McAffe
+WorkspacePath          :=/home/goldstein/Documentos/antivirus
+ProjectPath            :=/home/goldstein/Documentos/antivirus/McAffe
 IntermediateDirectory  :=./Debug
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
-User                   :=KURUMI
-Date                   :=03/04/2019
-CodeLitePath           :="C:/Program Files/CodeLite"
-LinkerName             :="C:/Program Files (x86)/CodeBlocks/MinGW/bin/g++.exe"
-SharedObjectLinkerName :="C:/Program Files (x86)/CodeBlocks/MinGW/bin/g++.exe" -shared -fPIC
+User                   :=GOLDSTEIN
+Date                   :=07/04/19
+CodeLitePath           :=/home/goldstein/.codelite
+LinkerName             :=g++
+SharedObjectLinkerName :=g++ -shared -fPIC
 ObjectSuffix           :=.o
 DependSuffix           :=.o.d
-PreprocessSuffix       :=.i
-DebugSwitch            :=-g 
+PreprocessSuffix       :=.o.i
+DebugSwitch            :=-gstab
 IncludeSwitch          :=-I
 LibrarySwitch          :=-l
 OutputSwitch           :=-o 
@@ -31,12 +31,10 @@ OutputFile             :=$(IntermediateDirectory)/$(ProjectName)
 Preprocessors          :=
 ObjectSwitch           :=-o 
 ArchiveOutputSwitch    := 
-PreprocessOnlySwitch   :=-E
+PreprocessOnlySwitch   :=-E 
 ObjectsFileList        :="McAffe.txt"
 PCHCompileFlags        :=
-MakeDirCommand         :=makedir
-RcCmpOptions           := 
-RcCompilerName         :="C:/Program Files (x86)/CodeBlocks/MinGW/bin/windres.exe"
+MakeDirCommand         :=mkdir -p
 LinkOptions            :=  
 IncludePath            :=  $(IncludeSwitch). $(IncludeSwitch). 
 IncludePCH             := 
@@ -49,19 +47,19 @@ LibPath                := $(LibraryPathSwitch).
 ## Common variables
 ## AR, CXX, CC, AS, CXXFLAGS and CFLAGS can be overriden using an environment variables
 ##
-AR       := "C:/Program Files (x86)/CodeBlocks/MinGW/bin/ar.exe" rcu
-CXX      := "C:/Program Files (x86)/CodeBlocks/MinGW/bin/g++.exe"
-CC       := "C:/Program Files (x86)/CodeBlocks/MinGW/bin/gcc.exe"
+AR       := ar rcus
+CXX      := g++
+CC       := gcc
 CXXFLAGS :=  -g -O0 -Wall $(Preprocessors)
 CFLAGS   :=  -g -O0 -Wall $(Preprocessors)
 ASFLAGS  := 
-AS       := "C:/Program Files (x86)/CodeBlocks/MinGW/bin/as.exe"
+AS       := as
 
 
 ##
 ## User defined environment variables
 ##
-CodeLiteDir:=C:\Program Files\CodeLite
+CodeLiteDir:=/usr/share/codelite
 Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/McAffe.cpp$(ObjectSuffix) 
 
 
@@ -81,11 +79,11 @@ $(OutputFile): $(IntermediateDirectory)/.d $(Objects)
 	$(LinkerName) $(OutputSwitch)$(OutputFile) @$(ObjectsFileList) $(LibPath) $(Libs) $(LinkOptions)
 
 MakeIntermediateDirs:
-	@$(MakeDirCommand) "./Debug"
+	@test -d ./Debug || $(MakeDirCommand) ./Debug
 
 
 $(IntermediateDirectory)/.d:
-	@$(MakeDirCommand) "./Debug"
+	@test -d ./Debug || $(MakeDirCommand) ./Debug
 
 PreBuild:
 
@@ -94,20 +92,20 @@ PreBuild:
 ## Objects
 ##
 $(IntermediateDirectory)/main.cpp$(ObjectSuffix): main.cpp $(IntermediateDirectory)/main.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/KURUMI.LAB4-PC04/Music/antivirus/McAffe/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/goldstein/Documentos/antivirus/McAffe/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/main.cpp$(DependSuffix): main.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/main.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/main.cpp$(DependSuffix) -MM main.cpp
 
 $(IntermediateDirectory)/main.cpp$(PreprocessSuffix): main.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.cpp$(PreprocessSuffix)main.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.cpp$(PreprocessSuffix) main.cpp
 
 $(IntermediateDirectory)/McAffe.cpp$(ObjectSuffix): McAffe.cpp $(IntermediateDirectory)/McAffe.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/KURUMI.LAB4-PC04/Music/antivirus/McAffe/McAffe.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/McAffe.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/goldstein/Documentos/antivirus/McAffe/McAffe.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/McAffe.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/McAffe.cpp$(DependSuffix): McAffe.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/McAffe.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/McAffe.cpp$(DependSuffix) -MM McAffe.cpp
 
 $(IntermediateDirectory)/McAffe.cpp$(PreprocessSuffix): McAffe.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/McAffe.cpp$(PreprocessSuffix)McAffe.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/McAffe.cpp$(PreprocessSuffix) McAffe.cpp
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

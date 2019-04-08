@@ -18,7 +18,9 @@ public:
     ~McAffe();
     
     void verificarVirus( int );
-    
+    void adicionarVirus( char );
+    void adicionarVirus( int );
+
    
     
     
@@ -26,9 +28,9 @@ private:
 
    
   int numbinfectado;   
-
-
+  int idvirus;
+  char nomedovirus;
 
 };
-
+ 
 #endif // MCAFFE_H

@@ -20,7 +20,7 @@ public:
 	 
 //Metodo:
 
-     void infoAssinante ( string &, int, int, string &) const ;
+     void infoAssinante ( ) const ;
 	 void printUser( ) const;
 	 
 	

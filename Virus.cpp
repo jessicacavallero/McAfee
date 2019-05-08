@@ -43,12 +43,14 @@ Virus::Virus ( const Virus &substrato)
 
 void Virus::printVirus( ) const
 {
-	cout << this->nomeVirus << "\n";
+	
+	 cout << this->nomeVirus << "\n";
+	 
 }
 
 
 void Virus::infoVirus() const 
 {
 	
-	
+	cout <<"O (s) nome (s) cadatrado (s) foi (foram ): " << nomeVirus;
 }

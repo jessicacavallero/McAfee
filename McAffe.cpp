@@ -2,6 +2,9 @@
 #include "Assinante.h"
 #include <string>
 using std::string;
+
+//const char McAffe::NAME =" Jessica Cavallero"; 
+
 // Construtor:
 
 McAffe::McAffe ( int id , int passwd,  const string &name, const string &assinatura  )
@@ -11,6 +14,7 @@ McAffe::McAffe ( int id , int passwd,  const string &name, const string &assinat
 	this->quantUser = 0;
 	this->virus = 0;
 	this->quantVirus = 0;
+	
 	
 }
 
@@ -88,12 +92,6 @@ void McAffe::verificarVirus( int numbInfectado  )
 }
 
 
-void McAffe::infoMcAffe( )  const 
-{
-	
-	cout << " hello ";
-	
-}
 
 
 void McAffe::adicionarVirus( const Virus&ameaca )
@@ -185,4 +183,18 @@ void McAffe::printUser( ) const
 		user[ i ].printUser( );
 	
 	}
+}
+
+
+void McAffe::infoMcAffe( )  const 
+{
+	cout << " As informações da classe são : \n";
+	cout << " Atributos\n";
+	cout << "A soma das questoes foi : " << numbInfectado ; 
+	cout <<" A quantidade de virus cadatrados foi : " << quantVirus;
+	cout << "A	 quantidade de usuarios cadatrados foi :  " << quantUser;
+	
+	user->infoAssinante();
+	virus->infoVirus();
+
 }

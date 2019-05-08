@@ -41,6 +41,8 @@ public:
 	void printUser ( ) const ;
 	
 	
+
+	
 	
 private:
 //Atributos:
@@ -51,6 +53,7 @@ private:
 	Virus *virus;
 	int quantVirus;
 	int quantUser;
+	
 	
 };
  

@@ -58,10 +58,9 @@ void Assinante::printUser( ) const
 }
 
 
-/* void infoAssinante ( const string &, int , int, const string & ) const 
+void Assinante ::infoAssinante ( ) const 
  {
 	 
-	 
+	 cout << " O(s) nome(s) cadatrado (s) foi (foram) : " << nomeDoAssinante;
 	 
  }
- **/

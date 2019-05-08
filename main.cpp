@@ -4,6 +4,7 @@
 #include "Virus.h"
 #include "Assinante.h"
 
+static const string NAME ;
 
 //Classes:
 
@@ -22,7 +23,7 @@ using std::cout;
 using std::cin;
 using std::string;
 
-static const string NAME = "Jessica Cavallero";
+
  
 int main(int argc, char **argv)
 {
@@ -214,11 +215,15 @@ break;
 		 antivirus.printVirus( );
 		cout  <<"Os dados que você adicionou foi" ;
 		antivirus.printVirus( ) ;
-	  
+	   cout << "\n";
+		cout << "\n";
+		
+		antivirus.infoMcAffe();
 		
 		 
 		 cout << "\n";
 		 cout << "\n";
-		 cout << "Projeto criado por " << NAME << "\n"; 
+	     cout << "Projeto criado por " << NAME << "\n"; 
+	
    
 }

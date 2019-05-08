@@ -2,19 +2,19 @@
 ## Auto Generated makefile by CodeLite IDE
 ## any manual changes will be erased      
 ##
-## Debug
+## Release
 ProjectName            :=McAffe
-ConfigurationName      :=Debug
-WorkspacePath          :=/home/goldstein/Documentos/antivirus
-ProjectPath            :=/home/goldstein/Documentos/antivirus/McAffe
-IntermediateDirectory  :=./Debug
+ConfigurationName      :=Release
+WorkspacePath          :=/root/Documentos/antivirus
+ProjectPath            :=/root/Documentos/antivirus/McAffe
+IntermediateDirectory  :=./Release
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
-User                   :=GOLDSTEIN
-Date                   :=07/04/19
-CodeLitePath           :=/home/goldstein/.codelite
+User                   :=root
+Date                   :=08/05/19
+CodeLitePath           :=/root/.codelite
 LinkerName             :=g++
 SharedObjectLinkerName :=g++ -shared -fPIC
 ObjectSuffix           :=.o
@@ -28,7 +28,7 @@ LibraryPathSwitch      :=-L
 PreprocessorSwitch     :=-D
 SourceSwitch           :=-c 
 OutputFile             :=$(IntermediateDirectory)/$(ProjectName)
-Preprocessors          :=
+Preprocessors          :=$(PreprocessorSwitch)NDEBUG 
 ObjectSwitch           :=-o 
 ArchiveOutputSwitch    := 
 PreprocessOnlySwitch   :=-E 
@@ -50,8 +50,8 @@ LibPath                := $(LibraryPathSwitch).
 AR       := ar rcus
 CXX      := g++
 CC       := gcc
-CXXFLAGS :=  -g -O0 -Wall $(Preprocessors)
-CFLAGS   :=  -g -O0 -Wall $(Preprocessors)
+CXXFLAGS :=  -O2 -Wall $(Preprocessors)
+CFLAGS   :=  -O2 -Wall $(Preprocessors)
 ASFLAGS  := 
 AS       := as
 
@@ -60,7 +60,7 @@ AS       := as
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/McAffe.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/McAffe.cpp$(ObjectSuffix) $(IntermediateDirectory)/Assinante.cpp$(ObjectSuffix) $(IntermediateDirectory)/Virus.cpp$(ObjectSuffix) $(IntermediateDirectory)/main.cpp$(ObjectSuffix) 
 
 
 
@@ -79,11 +79,11 @@ $(OutputFile): $(IntermediateDirectory)/.d $(Objects)
 	$(LinkerName) $(OutputSwitch)$(OutputFile) @$(ObjectsFileList) $(LibPath) $(Libs) $(LinkOptions)
 
 MakeIntermediateDirs:
-	@test -d ./Debug || $(MakeDirCommand) ./Debug
+	@test -d ./Release || $(MakeDirCommand) ./Release
 
 
 $(IntermediateDirectory)/.d:
-	@test -d ./Debug || $(MakeDirCommand) ./Debug
+	@test -d ./Release || $(MakeDirCommand) ./Release
 
 PreBuild:
 
@@ -91,21 +91,37 @@ PreBuild:
 ##
 ## Objects
 ##
-$(IntermediateDirectory)/main.cpp$(ObjectSuffix): main.cpp $(IntermediateDirectory)/main.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/goldstein/Documentos/antivirus/McAffe/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/main.cpp$(DependSuffix): main.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/main.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/main.cpp$(DependSuffix) -MM main.cpp
-
-$(IntermediateDirectory)/main.cpp$(PreprocessSuffix): main.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.cpp$(PreprocessSuffix) main.cpp
-
 $(IntermediateDirectory)/McAffe.cpp$(ObjectSuffix): McAffe.cpp $(IntermediateDirectory)/McAffe.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/goldstein/Documentos/antivirus/McAffe/McAffe.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/McAffe.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/root/Documentos/antivirus/McAffe/McAffe.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/McAffe.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/McAffe.cpp$(DependSuffix): McAffe.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/McAffe.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/McAffe.cpp$(DependSuffix) -MM McAffe.cpp
 
 $(IntermediateDirectory)/McAffe.cpp$(PreprocessSuffix): McAffe.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/McAffe.cpp$(PreprocessSuffix) McAffe.cpp
+
+$(IntermediateDirectory)/Assinante.cpp$(ObjectSuffix): Assinante.cpp $(IntermediateDirectory)/Assinante.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/root/Documentos/antivirus/McAffe/Assinante.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Assinante.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/Assinante.cpp$(DependSuffix): Assinante.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Assinante.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Assinante.cpp$(DependSuffix) -MM Assinante.cpp
+
+$(IntermediateDirectory)/Assinante.cpp$(PreprocessSuffix): Assinante.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Assinante.cpp$(PreprocessSuffix) Assinante.cpp
+
+$(IntermediateDirectory)/Virus.cpp$(ObjectSuffix): Virus.cpp $(IntermediateDirectory)/Virus.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/root/Documentos/antivirus/McAffe/Virus.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Virus.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/Virus.cpp$(DependSuffix): Virus.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Virus.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Virus.cpp$(DependSuffix) -MM Virus.cpp
+
+$(IntermediateDirectory)/Virus.cpp$(PreprocessSuffix): Virus.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Virus.cpp$(PreprocessSuffix) Virus.cpp
+
+$(IntermediateDirectory)/main.cpp$(ObjectSuffix): main.cpp $(IntermediateDirectory)/main.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/root/Documentos/antivirus/McAffe/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/main.cpp$(DependSuffix): main.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/main.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/main.cpp$(DependSuffix) -MM main.cpp
+
+$(IntermediateDirectory)/main.cpp$(PreprocessSuffix): main.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.cpp$(PreprocessSuffix) main.cpp
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)
@@ -113,6 +129,6 @@ $(IntermediateDirectory)/McAffe.cpp$(PreprocessSuffix): McAffe.cpp
 ## Clean
 ##
 clean:
-	$(RM) -r ./Debug/
+	$(RM) -r ./Release/
 
 

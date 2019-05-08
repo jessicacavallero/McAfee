@@ -4,6 +4,7 @@
 #include "Virus.h"
 #include "Assinante.h"
 
+
 //Classes:
 
 class McAffe;
@@ -21,7 +22,8 @@ using std::cout;
 using std::cin;
 using std::string;
 
-
+static const string NAME = "Jessica Cavallero";
+ 
 int main(int argc, char **argv)
 {
 	Virus *listaVirus = 0;
@@ -33,25 +35,11 @@ int main(int argc, char **argv)
 	string nameUser;
 	
 	
-	
-	
 	McAffe antivirus;
 	McAffe usuario;
 	
-	/*for( int i =0; i < quantityVirus; i++)
-	{
-		cout << "Entre com o nome do virus\n";
-		cin >> nameVirus;
-		Virus virus( nameVirus );
-		antivirus.adicionarVirus( virus );
-		
-	}
-	antivirus.printVirus( );
-	 
-**/	
 	
-	     usuario.printVirus( );
-	cout << "                 B E M  -  V I N D O  \n\n";
+    cout << "                 B E M  -  V I N D O  \n\n";
 	cout << "                       A O  \n\n";
 	cout << "                   M C A F F E      \n\n";
 	cout << "\n";
@@ -124,6 +112,11 @@ case 1:
 				 break;
 				 
 				 case 2 :
+				 
+				 cout << "\n";
+				 cout << " Poxa , espero que você consiga se virar sozinho nesse mundo cheio de monstros que é a internet ";
+				 cout << "\n";
+				 
 				 break;
 
 			 }
@@ -186,8 +179,9 @@ break;
 		cout <<   "Voce pode ajudar a nosso antivirus , quer saber como ? \n";
 		cout <<   "É simples , é só você adicionar um ou mais vírus no nosso banco de dados \n";
 		cout <<   "Voce aceita ?\n ";
-		cout  <<  " 1-SIM";
-		cout  <<  "2-NÃO";
+		cout << "\n";
+		cout  <<  " 1-SIM\n";
+		cout  <<  "2-NÃO\n";
 		 cin >> vivi;
 		 
 		 switch (vivi)
@@ -199,7 +193,7 @@ break;
 					
 					for( int i =0; i < quantityVirus; i++)
 	                {
-							cout << "Entre com o nome do virus\n";
+							cout << "Escreva o nome do virus\n";
 								cin >> nameVirus;
 							Virus virus( nameVirus );
 							antivirus.adicionarVirus( virus );
@@ -216,5 +210,15 @@ break;
 					break;
 	
 		 }
+		 
+		 antivirus.printVirus( );
+		cout  <<"Os dados que você adicionou foi" ;
+		antivirus.printVirus( ) ;
+	  
+		
+		 
+		 cout << "\n";
+		 cout << "\n";
+		 cout << "Projeto criado por " << NAME << "\n"; 
    
 }

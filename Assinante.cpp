@@ -52,7 +52,7 @@ Assinante::Assinante ( const Assinante &origem )
 
 //Metodo:
 
-void Assinante::print( ) const
+void Assinante::printUser( ) const
 {
 	cout << this->nomeDoAssinante << "\n";
 }

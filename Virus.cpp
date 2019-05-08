@@ -17,6 +17,7 @@ using std::string;
 		
 }	
 
+
 Virus::Virus ( int anoVirus )
 {
 	
@@ -40,7 +41,14 @@ Virus::Virus ( const Virus &substrato)
 
 // Metodos:
 
-void Virus::print( ) const
+void Virus::printVirus( ) const
 {
 	cout << this->nomeVirus << "\n";
+}
+
+
+void Virus::infoVirus() const 
+{
+	
+	
 }

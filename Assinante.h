@@ -21,7 +21,7 @@ public:
 //Metodo:
 
      void infoAssinante ( string &, int, int, string &) const ;
-	 void print( ) const;
+	 void printUser( ) const;
 	 
 	
 private:

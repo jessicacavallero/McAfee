@@ -46,25 +46,31 @@ McAffe::~McAffe()
 
 //Metodos:
 
-void McAffe::verificarVirus( int numbinfectado  )
+void McAffe::verificarVirus( int numbInfectado  )
 {
       
-	if ( numbinfectado == 3 )
+	if ( numbInfectado == 3 )
 		{
 			 
 			  
-					cout << "Seu computador provalmente não esta infectado";
+					cout << "Seu computador provalmente não está infectado\n";
 					cout << " Melhore sua experiencia e assine o McAffe\n ";
+					cout << "\n";
 					cout << " 	Planos disponiveis: \n";
+					cout << "\n";
+					
 					tiposDeAssinaturas() ;
 					
 		}
 		else 
 		{
 
-					cout << "Há um pequena possibilidade de seu computador ter um arquivo infectado";
-					cout << "  Usando o McAffe você fica seguro \n ";
+					cout << "Há uma possibilidade de seu computador ter um arquivo infectado\n";
+					cout << "  Usando o McAffe você fica seguro e livre de qualquer vírus \n";
+                    cout << "\n";
 					cout << " 	 Escolha um plano  ";
+					cout << "\n";
+					
 					tiposDeAssinaturas()  ;
 				
 		}
@@ -119,9 +125,9 @@ void McAffe::adicionarVirus( const Virus&ameaca )
 	
 	}
 		
-	cout << "Quantidade de virus atual eh " << quantVirus << '\n';
-	cout << "Virus adicionado " ;
-	virus[ quantVirus - 1 ].print( ) ;
+	cout << "Quantidade de virus cadastrado (s)  é (são):   " << quantVirus << '\n';
+	cout << "Virus adicionado(s) " ;
+	virus[ quantVirus - 1 ].printVirus( ) ;
 	cout << '\n';
 
 }
@@ -132,7 +138,7 @@ void McAffe::printVirus( ) const
 	for( int i =0; i < quantVirus; i++)
 	{
 		cout << "Imprimir virus " << i  + 1<< "\n";
-		virus[ i ].print( );
+		virus[ i ].printVirus( );
 	
 	}
 }
@@ -176,7 +182,7 @@ void McAffe::printUser( ) const
 	for( int i =0; i < quantUser; i++)
 	{
 		cout << "Imprimir virus " << i  + 1<< "\n";
-		user[ i ].print( );
+		user[ i ].printUser( );
 	
 	}
 }

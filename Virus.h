@@ -28,8 +28,8 @@ public:
 	//~Virus();
 	
 //Metodos:
-
-		void print( ) const;
+        void infoVirus() const ;
+		void printVirus( ) const;
 		
 
 private:

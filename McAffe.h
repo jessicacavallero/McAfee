@@ -41,6 +41,7 @@ public:
 	void printUser ( ) const ;
 	
 	
+	
 private:
 //Atributos:
  

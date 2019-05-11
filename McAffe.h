@@ -40,9 +40,18 @@ public:
 	void addUser ( const Assinante & );
 	void printUser ( ) const ;
 	
+	void adicionarEfeito( const Virus &);
 	
+	void adicionarAno( const Virus &);
 
 	
+	void setConfigUser( int, int, const string &, const string & );
+	
+	void setSenha( int senha );
+	
+	void setAssinatura( const string &tipo );
+	
+	void getNome(  );
 	
 private:
 //Atributos:
@@ -51,9 +60,15 @@ private:
 
 	Assinante *user;
 	Virus *virus;
+	Virus *efeito;
+	Virus *ano;
 	int quantVirus;
 	int quantUser;
+	int quantEfeito;
+	int quantAno;
 	
+	const static  string  NOME;
+	string typeS ;
 	
 };
  

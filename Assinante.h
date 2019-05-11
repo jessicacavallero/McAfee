@@ -23,6 +23,14 @@ public:
      void infoAssinante ( ) const ;
 	 void printUser( ) const;
 	 
+	 void setId( int );
+	 
+	 void setNameUser( const string &name );
+	 
+	 void setTypeSubs( const string & );
+	 
+	 void setPassword( int );
+	 
 	
 private:
 //Atributos:

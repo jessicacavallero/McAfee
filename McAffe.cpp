@@ -5,6 +5,8 @@ using std::string;
 
 //const char McAffe::NAME =" Jessica Cavallero"; 
 
+//const string McAffe::NOME= " Jéssica Cavallero";
+
 // Construtor:
 
 McAffe::McAffe ( int id , int passwd,  const string &name, const string &assinatura  )
@@ -37,10 +39,27 @@ McAffe::McAffe( int nInfect )
 McAffe::McAffe( const  McAffe &base )
 {
 
-	this->user = 0;
-	this->virus = 0;
-	
-	
+		this->numbInfectado = base.numbInfectado;
+		this->quantVirus = base.quantVirus;
+		this->quantUser = base.quantUser;
+		
+				
+		if( user != 0 )
+			delete [ ] user;
+			
+		user = new Assinante[  this->quantUser ];		
+		for( int i = 0; i < this->quantUser; i++ )
+			this->user[ i ] = base.user[ i ];
+			
+			if ( virus != 0 )
+			    delete [ ] virus;
+		
+       virus = new Virus [ this->quantVirus ];
+	      for ( int i = 0; i < this -> quantVirus; i++)
+			this -> virus [ i ]  = base.virus[ i ];
+			
+			if ( user !=0 )
+				delete [ ] user;
 }
 
 
@@ -50,42 +69,51 @@ McAffe::~McAffe()
 
 //Metodos:
 
-void McAffe::verificarVirus( int numbInfectado  )
+void McAffe::infoMcAffe( )  const 
+{
+	cout << " As informações da classe são : \n";
+	cout << " Atributos\n";
+	cout << "A soma das questoes foi : " << numbInfectado ; 
+	cout <<" A quantidade de virus cadatrados foi : " << quantVirus;
+	cout << "A	 quantidade de usuarios cadatrados foi :  " << quantUser;
+	
+	user->infoAssinante();
+	virus->infoVirus();
+
+}
+
+
+
+void McAffe::verificarVirus( int numbInfectado)
 {
       
-	if ( numbInfectado == 3 )
-		{
+if ( numbInfectado  == 3)
+      {
 			 
-			  
-					cout << "Seu computador provalmente não está infectado\n";
-					cout << " Melhore sua experiencia e assine o McAffe\n ";
+			        cout << " A partir do  seu teste o seu computador provalmente não está infectado. Para continuar assim recomendamos o pacote  INTERNET SECURITY \n";
+			        cout << " Melhore sua experiencia e assine o McAffe\n ";
 					cout << "\n";
-					cout << " 	Planos disponiveis: \n";
-					cout << "\n";
-					
-					tiposDeAssinaturas() ;
-					
-		}
-		else 
-		{
+					//this -> typeS = " Internet Security";
+				//	user -> setTypeSubs( );
+				
+	}
 
-					cout << "Há uma possibilidade de seu computador ter um arquivo infectado\n";
+	else 
+	{
+					cout << "A partir do  seu teste o seu computador é possivel perceber que há uma possibilidade de seu computador ter um arquivo infectado.Para mudar esse situação recomendamos o pacote TOTAL SECURITY\n";
 					cout << "  Usando o McAffe você fica seguro e livre de qualquer vírus \n";
                     cout << "\n";
-					cout << " 	 Escolha um plano  ";
-					cout << "\n";
-					
-					tiposDeAssinaturas()  ;
+				    // this-> typeS = "Total Security" ;
+					//user -> setTypeSubs( string &typeS);
 				
-		}
-					 
+	}
 }
 
 
  void McAffe::tiposDeAssinaturas( )  const
 {
 	cout  << "Tipos de assisnaturas são:\n\n";
-	cout  << "Basic\n";
+
 	cout  << "Internet Security\n" ;
 	cout  << "Total Security\n";
 	cout  << "\n";
@@ -186,15 +214,98 @@ void McAffe::printUser( ) const
 }
 
 
-void McAffe::infoMcAffe( )  const 
+void McAffe::adicionarEfeito( const Virus&efeito )
 {
-	cout << " As informações da classe são : \n";
-	cout << " Atributos\n";
-	cout << "A soma das questoes foi : " << numbInfectado ; 
-	cout <<" A quantidade de virus cadatrados foi : " << quantVirus;
-	cout << "A	 quantidade de usuarios cadatrados foi :  " << quantUser;
 	
-	user->infoAssinante();
-	virus->infoVirus();
+	if( virus != 0 )
+	{
+
+		Virus *aux = new Virus [ quantVirus ];
+	
+		for ( int i = 0 ; i  <  quantVirus ; i++)
+			 aux[ i ]  = virus[ i ];
+			 
+		delete [ ]  virus;
+
+		virus = new Virus [ ++quantVirus ];
+	
+		for (int i = 0; i  < quantVirus - 1; i++ )
+			virus[ i ] = aux [ i ];
+		
+		virus[ quantVirus - 1 ] =  efeito;
+
+		delete [ ]  aux ;
+	}
+	else
+	{
+		virus = new Virus [ ++quantVirus ];
+		virus[ quantVirus - 1 ] = efeito;
+	
+	}
+}
+
+void adicionarAno( const Virus &ano)
+{
+	if( virus != 0 )
+	{
+
+		Virus *aux = new Virus [ quantVirus ];
+	
+		for ( int i = 0 ; i  <  quantVirus ; i++)
+			 aux[ i ]  = virus[ i ];
+			 
+		delete [ ]  virus;
+
+		virus = new Virus [ ++quantVirus ];
+	
+		for (int i = 0; i  < quantVirus - 1; i++ )
+			virus[ i ] = aux [ i ];
+		
+		virus[ quantVirus - 1 ] =  ano;
+
+		delete [ ]  aux ;
+	}
+	else
+	{
+		virus = new Virus [ ++quantVirus ];
+		virus[ quantVirus - 1 ] = ano;
+    }
+
+	
+}     
+
+
+void McAffe::setConfigUser( int id, int pass, const string &name, const string  &typeS)
+{
+	
+	user->setNameUser( name );
+	user->setId( id );
+	user->setTypeSubs( typeS );
+	user->setPassword( pass );
+}
+
+
+void McAffe::setSenha( int senha )
+{
+	
+	user->setPassword( senha );
 
 }
+
+
+void McAffe::setAssinatura( const string &tipo )
+{
+	
+	 user->setTypeSubs( tipo );  
+
+	
+}
+
+
+void McAffe::getNome(  )
+{
+	
+this-> NOME;
+	
+}
+

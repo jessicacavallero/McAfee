@@ -52,39 +52,12 @@ int main(int argc, char **argv)
 	string typeS;
 	
 	
-	/*
-	cout << "Quantos assinantes \n";
-	cin >> nAssinantes;
-	listadeAntivirus = new McAffe[  nAssinantes ];
-	
-	for( int i = 0; i < nAssinantes; i++ )
-	{
-		cout << "id";
-		cin >> id;
-		cout << "Nome \n";
-		cin >> name;
-		cout << "Tipo de assinatura\n";
-		
-		
-		
-		listadeAntivirus[ i ].setConfigUser(  id, 0, name );
-	}
-		
-		
-	for( int i = 0; i < nAssinantes; i++ )
-	{
-		cout << "Entre com sua senha\n";
-		cin >> pass;
-		listadeAntivirus[ i ].setSenha( pass );
-	}
-	
-**/	
+
 
 			int menu;
 
-	
-	//cout << "Digite o nome do usuario e a sua versao do antivirus\n";
-	//do {
+
+	do {
 	
 	
 		cout << "                 B E M  -  V I N D O  \n\n";
@@ -389,7 +362,7 @@ break;
 				
 }
 
-//}while ( menu  !=  5 );
+}while ( menu  !=  5 );
 
 string nomezin;
 nomezin = "Jessica Cavallero";
@@ -410,28 +383,5 @@ antivirus.getNome( nomezin );
 
 
 
-/**
-	cout << "\n";
-	
-	int indexUser;
-	cout << "Para qual usuario voce quer fazerr o teste\n";
-	cin >> indexUser;
-	//McAffe tempAntivirus = listadeAntivirus[ iindexUser];	
-	
-    
-			 
-			
-	
-		
-			//	listadeAntivirus[ iindexUser].
-
-		
-		
-				 
-
-		
-		antivirus.infoMcAffe();
-		
-		 **/
 
 

@@ -25,7 +25,7 @@ public:
 	 
 	 void setId( int );
 	 
-	 void setNameUser( const string &name );
+	 void setNameUser( const string & );
 	 
 	 void setTypeSubs( const string & );
 	 

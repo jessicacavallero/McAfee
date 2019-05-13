@@ -44,8 +44,36 @@ private:
 
 
 
-
-
+/*
+ * 
+ * 
+ * 	cout << " Você deseja se cadastar ?\n";
+								cout << "1-SIM\n2-NÃO\n";
+									cin >> cadastro; 
+											if ( cadastro == 1 )
+											 {
+													 
+												quantityUser = 1;
+															
+											for( int i =0; i < quantityUser; i++)
+											{
+															   
+												cout << "Entre com o nome do novo usuario \n " ;
+												cin >> nameUser;
+												usuario.addUser( Assinante( nameUser )  );
+												//Assinante user ( nameUser );  
+												//usuario.addUser( user );
+															
+											}
+											}	 
+											else 
+											 {
+												 
+											cout << "  Saindo ....";
+				 
+											}
+											 
+**/
 
 
 

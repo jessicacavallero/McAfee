@@ -45,13 +45,15 @@ public:
 	void adicionarAno( const Virus &);
 
 	
-	void setConfigUser( int, int, const string &, const string & );
+	void setConfigUser(  const string &, int , const string  & , int );
 	
 	void setSenha( int senha );
 	
 	void setAssinatura( const string &tipo );
 	
 	void getNome(  );
+	
+	void setNome ( );
 	
 private:
 //Atributos:

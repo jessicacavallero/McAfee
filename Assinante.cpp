@@ -20,14 +20,9 @@ Assinante::Assinante ( const string &nameUser, int id , int passwd, const string
 }
 
 
-/*
-Assinante::Assinante ( int id , int passwd,  const string &nameUser, const string &assinatura  )
-:idDoAssinante(id),  senha(passwd),  nomeDoAssinante(nameUser),  tipoDeAssinatura(assinatura)
-{
 
 
-}
-**/
+
 
 
 Assinante::Assinante ( int id ) 
@@ -90,10 +85,10 @@ void  Assinante::setNameUser( const string &name )
  }
  
  
-void  Assinante::setTypeSubs( const string &typeS )
+ void Assinante::setTypeSubs(  const string &typeS )
 {
 	
-	 this-> tipoDeAssinatura = typeS;
+ this-> tipoDeAssinatura = typeS;
 	
 }
 

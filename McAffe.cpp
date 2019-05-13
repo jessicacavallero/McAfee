@@ -3,20 +3,18 @@
 #include <string>
 using std::string;
 
-//const char McAffe::NAME =" Jessica Cavallero"; 
 
-//const string McAffe::NOME= " Jéssica Cavallero";
 
 // Construtor:
 
 McAffe::McAffe ( int id , int passwd,  const string &name, const string &assinatura  )
 {
+	
 	this ->numbInfectado = 0;
 	this->user = 0;
 	this->quantUser = 0;
 	this->virus = 0;
 	this->quantVirus = 0;
-	
 	
 }
 
@@ -69,57 +67,45 @@ McAffe::~McAffe()
 
 //Metodos:
 
-void McAffe::infoMcAffe( )  const 
-{
-	cout << " As informações da classe são : \n";
-	cout << " Atributos\n";
-	cout << "A soma das questoes foi : " << numbInfectado ; 
-	cout <<" A quantidade de virus cadatrados foi : " << quantVirus;
-	cout << "A	 quantidade de usuarios cadatrados foi :  " << quantUser;
-	
-	user->infoAssinante();
-	virus->infoVirus();
-
-}
-
-
-
-void McAffe::verificarVirus( int numbInfectado)
+void McAffe::verificarVirus( int numbInfectado  )
 {
       
-if ( numbInfectado  == 3)
-      {
+	if ( numbInfectado == 3 )
+		{
+			 const string typeS ; 
 			 
-			        cout << " A partir do  seu teste o seu computador provalmente não está infectado. Para continuar assim recomendamos o pacote  INTERNET SECURITY \n";
-			        cout << " Melhore sua experiencia e assine o McAffe\n ";
 					cout << "\n";
-					//this -> typeS = " Internet Security";
-				//	user -> setTypeSubs( );
+					cout << " A partir das suas respostas o seu computador provalmente não está infectado, para continuar assim utilize o Internet Security.\n";
+					cout << " Melhore sua experiencia e assine o McAffe\n ";
+					this-> typeS = " Internet Security";
+					//user->setTypeSubs( typeS );
 				
-	}
-
-	else 
-	{
-					cout << "A partir do  seu teste o seu computador é possivel perceber que há uma possibilidade de seu computador ter um arquivo infectado.Para mudar esse situação recomendamos o pacote TOTAL SECURITY\n";
+				
+				
+		}
+		else 
+		{
+			
+					cout << "\n";
+					cout << "A partir das suas respostas há uma possibilidade de seu computador ter um arquivo infectado, para ficar livre de qualquer vírus utilize o  Total Security.\n";
 					cout << "  Usando o McAffe você fica seguro e livre de qualquer vírus \n";
-                    cout << "\n";
-				    // this-> typeS = "Total Security" ;
-					//user -> setTypeSubs( string &typeS);
-				
-	}
+				    this-> typeS = " Total Security";
+                    //user->setTypeSubs( typeS );
+		}
+					 
 }
 
 
  void McAffe::tiposDeAssinaturas( )  const
 {
+	
 	cout  << "Tipos de assisnaturas são:\n\n";
-
-	cout  << "Internet Security\n" ;
+	cout  << "\n";
+    cout  << "Internet Security\n" ;
 	cout  << "Total Security\n";
 	cout  << "\n";
+	
 }
-
-
 
 
 void McAffe::adicionarVirus( const Virus&ameaca )
@@ -143,33 +129,35 @@ void McAffe::adicionarVirus( const Virus&ameaca )
 		virus[ quantVirus - 1 ] =  ameaca;
 
 		delete [ ]  aux ;
+		
 	}
 	else
 	{
+		
 		virus = new Virus [ ++quantVirus ];
 		virus[ quantVirus - 1 ] = ameaca;
 	
 	}
-		
-	cout << "Quantidade de virus cadastrado (s)  é (são):   " << quantVirus << '\n';
-	cout << "Virus adicionado(s) " ;
-	virus[ quantVirus - 1 ].printVirus( ) ;
-	cout << '\n';
-
+	
 }
 
 void McAffe::printVirus( ) const
 {
 	
-	for( int i =0; i < quantVirus; i++)
-	{
-		cout << "Imprimir virus " << i  + 1<< "\n";
-		virus[ i ].printVirus( );
 	
-	}
+		cout << "Quantidade de virus cadastrado(s) é(são):   " << quantVirus << '\n';
+		cout << "\n";
+		for( int i =0; i < quantVirus; i++)
+		{
+			
+			//cout << "Imprimir virus " << i  + 1<< "\n";
+			//virus[ i ].printVirus( );
+			cout << " O  nome do vŕus é \n" ;
+			virus[ quantVirus - 1 ].printVirus( ) ;
+
+         }
+		
 }
-
-
 
 
 
@@ -194,94 +182,53 @@ void McAffe::addUser( const Assinante&usuario )
 		user[ quantUser - 1 ] =  usuario;
 
 		delete [ ]  aux ;
+		
 	}
 	else
 	{
+		
 		user = new Assinante [ ++quantUser ];
 		user[ quantUser - 1 ] = usuario;
+		
+	}
 	
-}}
+}
 
 void McAffe::printUser( ) const
 {
 	
 	for( int i =0; i < quantUser; i++)
 	{
+		
 		cout << "Imprimir virus " << i  + 1<< "\n";
 		user[ i ].printUser( );
 	
 	}
+	
 }
 
 
-void McAffe::adicionarEfeito( const Virus&efeito )
+void McAffe::infoMcAffe( )  const 
 {
+	cout << " As informações da classe são : \n";
+	cout << " Atributos\n";
+	cout << "A soma das questoes foi : " << numbInfectado ; 
+	cout <<" A quantidade de virus cadatrados foi : " << quantVirus;
+	cout << "A	 quantidade de usuarios cadatrados foi :  " << quantUser;
 	
-	if( virus != 0 )
-	{
+	user->infoAssinante();
+	virus->infoVirus();
 
-		Virus *aux = new Virus [ quantVirus ];
-	
-		for ( int i = 0 ; i  <  quantVirus ; i++)
-			 aux[ i ]  = virus[ i ];
-			 
-		delete [ ]  virus;
-
-		virus = new Virus [ ++quantVirus ];
-	
-		for (int i = 0; i  < quantVirus - 1; i++ )
-			virus[ i ] = aux [ i ];
-		
-		virus[ quantVirus - 1 ] =  efeito;
-
-		delete [ ]  aux ;
-	}
-	else
-	{
-		virus = new Virus [ ++quantVirus ];
-		virus[ quantVirus - 1 ] = efeito;
-	
-	}
 }
 
-void adicionarAno( const Virus &ano)
-{
-	if( virus != 0 )
-	{
-
-		Virus *aux = new Virus [ quantVirus ];
-	
-		for ( int i = 0 ; i  <  quantVirus ; i++)
-			 aux[ i ]  = virus[ i ];
-			 
-		delete [ ]  virus;
-
-		virus = new Virus [ ++quantVirus ];
-	
-		for (int i = 0; i  < quantVirus - 1; i++ )
-			virus[ i ] = aux [ i ];
-		
-		virus[ quantVirus - 1 ] =  ano;
-
-		delete [ ]  aux ;
-	}
-	else
-	{
-		virus = new Virus [ ++quantVirus ];
-		virus[ quantVirus - 1 ] = ano;
-    }
-
-	
-}     
-
-
-void McAffe::setConfigUser( int id, int pass, const string &name, const string  &typeS)
+void McAffe::setConfigUser(  const string &name, int id, const string  &typeS, int pass )
 {
 	
 	user->setNameUser( name );
 	user->setId( id );
 	user->setTypeSubs( typeS );
 	user->setPassword( pass );
+	
 }
 
 
@@ -305,7 +252,16 @@ void McAffe::setAssinatura( const string &tipo )
 void McAffe::getNome(  )
 {
 	
-this-> NOME;
+ this-> NOME;
 	
 }
 
+
+void setNome ( const string &nomezin)
+{
+	
+	
+	
+}
+	
+	

@@ -3,18 +3,28 @@
 #include <string>
 using std::string;
 
-
+const string McAffe::NOME = "Jessica Cavallero";
 
 // Construtor:
 
-McAffe::McAffe ( int id , int passwd,  const string &name, const string &assinatura  )
+McAffe::McAffe ( int quantUser  )
 {
 	
+	if( quantUser > 0 )
+		this->quantUser = quantUser;
+		
+	user = new Assinante[this->quantUser ];
+	virus = new Virus[ this-> quantUser] ;
+	
+	
+
+	
 	this ->numbInfectado = 0;
-	this->user = 0;
 	this->quantUser = 0;
-	this->virus = 0;
+
 	this->quantVirus = 0;
+	
+
 	
 }
 
@@ -25,10 +35,12 @@ McAffe::McAffe( int nInfect )
 		if(  nInfect > 0 )
 			this->numbInfectado = nInfect;
 			
-		this->user = 0;
-		this->quantUser =0;
-		this->virus = 0;
-		this->quantVirus = 0;
+			user = new Assinante[this->quantUser ];
+			virus = new Virus[ this-> quantUser] ;
+		
+			this->quantUser =0;
+	
+			this->quantVirus = 0;
 
 		
 }   
@@ -57,7 +69,7 @@ McAffe::McAffe( const  McAffe &base )
 			this -> virus [ i ]  = base.virus[ i ];
 			
 			if ( user !=0 )
-				delete [ ] user;
+				delete [] user;
 }
 
 
@@ -72,13 +84,13 @@ void McAffe::verificarVirus( int numbInfectado  )
       
 	if ( numbInfectado == 3 )
 		{
-			 const string typeS ; 
+			     string typeS ; 
 			 
 					cout << "\n";
 					cout << " A partir das suas respostas o seu computador provalmente não está infectado, para continuar assim utilize o Internet Security.\n";
 					cout << " Melhore sua experiencia e assine o McAffe\n ";
-					this-> typeS = " Internet Security";
-					//user->setTypeSubs( typeS );
+					typeS = " Internet Security";
+					user->setTypeSubs( typeS );
 				
 				
 				
@@ -86,11 +98,13 @@ void McAffe::verificarVirus( int numbInfectado  )
 		else 
 		{
 			
+				   string typeS ; 
+
 					cout << "\n";
 					cout << "A partir das suas respostas há uma possibilidade de seu computador ter um arquivo infectado, para ficar livre de qualquer vírus utilize o  Total Security.\n";
 					cout << "  Usando o McAffe você fica seguro e livre de qualquer vírus \n";
-				    this-> typeS = " Total Security";
-                    //user->setTypeSubs( typeS );
+				   typeS = " Total Security";
+				    user->setTypeSubs( typeS );
 		}
 					 
 }
@@ -221,11 +235,13 @@ void McAffe::infoMcAffe( )  const
 
 }
 
-void McAffe::setConfigUser(  const string &name, int id, const string  &typeS, int pass )
+void McAffe::setConfigUser(  const string &name, int id, const string  &typeS, int pass , int indexUser )
 {
 	
-	user->setNameUser( name );
-	user->setId( id );
+	cout << "asdasd\n";
+	cout << user <<  '\n';
+	user[indexUser].setNameUser( name );
+	user[indexUser].setId( id );
 	user->setTypeSubs( typeS );
 	user->setPassword( pass );
 	
@@ -249,19 +265,12 @@ void McAffe::setAssinatura( const string &tipo )
 }
 
 
-void McAffe::getNome(  )
+string McAffe::getNome(  )
 {
 	
- this-> NOME;
+return this-> NOME;
 	
 }
 
 
-void setNome ( const string &nomezin)
-{
-	
-	
-	
-}
-	
 	

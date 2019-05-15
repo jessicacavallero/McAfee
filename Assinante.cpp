@@ -1,4 +1,5 @@
 #include "Assinante.h"
+#include "McAffe.h"
 #include <iostream>
 using std::cout;
 using std::cin;
@@ -15,6 +16,7 @@ Assinante::Assinante ( const string &nameUser, int id , int passwd, const string
 	this-> idDoAssinante = id;
 	this-> senha = passwd;
 	this-> tipoDeAssinatura = assinatura;
+	
 
 
 }

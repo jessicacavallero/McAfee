@@ -40,20 +40,20 @@ public:
 	void addUser ( const Assinante & );
 	void printUser ( ) const ;
 	
-	void adicionarEfeito( const Virus &);
+	//void adicionarEfeito( const Virus &);
 	
-	void adicionarAno( const Virus &);
+	//void adicionarAno( const Virus &);
 
 	
-	void setConfigUser(  const string &, int , const string  & , int );
+	void setConfigUser(  const string &, int , const string  & , int , int );
 	
 	void setSenha( int senha );
 	
 	void setAssinatura( const string &tipo );
 	
-	void getNome(  );
+	string getNome(  );
 	
-	void setNome ( );
+	void setNome ( const string & );
 	
 private:
 //Atributos:
@@ -62,16 +62,13 @@ private:
 
 	Assinante *user;
 	Virus *virus;
-	Virus *efeito;
-	Virus *ano;
+
 	int quantVirus;
 	int quantUser;
-	int quantEfeito;
-	int quantAno;
+
 	
-	const static  string  NOME;
-	string typeS ;
-	
+	const static  string  NOME ;
+
 };
  
 #endif // MCAFFE_H

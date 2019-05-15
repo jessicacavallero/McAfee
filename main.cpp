@@ -44,20 +44,24 @@ int main(int argc, char **argv)
 	McAffe usuario;
 
 
-	McAffe *listadeAntivirus;
+	McAffe *listadeAntivirus = 0;
 	int nAssinantes = 0;
 	int id;
 	string name;
 	int pass;
 	string typeS;
-	
-	
+	int indexUser;
 
+	/*McAffe test;
+	
+	cout << "asdfasd";
+	test.setConfigUser("adas", 12234,  "srasd", 12344);
+**/
 
 			int menu;
 
 
-	do {
+//	do {
 	
 	
 		cout << "                 B E M  -  V I N D O  \n\n";
@@ -321,28 +325,31 @@ case 4:
 					
 							for( int i = 0; i < nAssinantes; i++ )
 							{
+							 
+							  
 								cout << "Adicione o ID do usuario\n";
 							    cin >> id;
-								cout << "Adicione o nome \n";
+								cout << "Adicione o nome do novo usuario\n";
 								getline( cin, name );
 								cout << "Tipo de assinatura\n";
 								getline( cin, typeS );
-								cout << " Adiciona uma senha para o usuario";
+								cout << "Adicione uma senha para o usuario\n";
 								cin >>pass;
 								
-								listadeAntivirus[ i ].setConfigUser( name, id, typeS, pass);  
+								cout << "User " << i << '\n';
+								listadeAntivirus[ i ].setConfigUser( name, id, typeS, pass, indexUser );  
 								
 								
 							}
 						
-						
-					for( int i = 0; i < nAssinantes; i++ )
-					{
-						cout << "Entre com sua senha\n";
-						cin >> pass;
-						listadeAntivirus[ i ].setSenha( pass );
-					}
-										
+									
+								for( int i = 0; i < nAssinantes; i++ )
+								{
+									cout << "Entre com sua senha\n";
+									cin >> pass;
+									listadeAntivirus[ i ].setSenha( pass );
+								}
+													
 						
 
 					break;
@@ -362,17 +369,17 @@ break;
 				
 }
 
-}while ( menu  !=  5 );
+//}while ( menu  !=  5 );
 
-string nomezin;
-nomezin = "Jessica Cavallero";
-antivirus.getNome( nomezin );
+
+
 
 		 cout << "\n";
 		 cout << "\n";
-	     cout << "Projeto criado por "; antivirus.setNome( );  
+	    cout << "Projeto criado por " << antivirus.getNome( );  
 
 
+ 
 }
 
 

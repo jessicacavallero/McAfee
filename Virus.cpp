@@ -35,6 +35,8 @@ Virus::Virus ( const Virus &substrato)
 	this-> nomeVirus= substrato.nomeVirus;
 	this-> anoVirus = substrato.anoVirus;
 	this-> efeitoVirus = substrato.efeitoVirus;
+	
+	
  
 }
 

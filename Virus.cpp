@@ -6,22 +6,36 @@ using std::cin;
 #include <string>
 using std::string;
 
-//Construtores:
+using std::ostream; 
 
- Virus::Virus (  const string & nomeV, int ano, const string &effect )
+ostream &operator << (ostream & print, const Virus &virus )
 {
 
-	this-> nomeVirus = nomeV;
-	this-> anoVirus = ano;
-	this-> efeitoVirus = effect;
+ print << "O nome, o ano e o efeito do vírus são :  " << virus.nomeDoVirus<< '\t' << virus.anoDoVirus << '\t' << virus.efeitoDoVirus<< '\n';
+ 
+return  print ;
+
+}
+
+
+
+//Construtores:
+
+ Virus::Virus (  const string & nVirus, int aVirus, const string &eVirus, int qVirus)
+{
+
+	this-> nomeDoVirus = nVirus;
+	this-> anoDoVirus = aVirus;
+	this-> efeitoDoVirus = eVirus;
+	this->quantidadeDeVirus = qVirus;
 		
 }	
 
 
-Virus::Virus ( int anoVirus )
+Virus::Virus ( int anoDoVirus )
 {
 	
-	if ( anoVirus< 1998)
+	if ( anoDoVirus< 1998)
 	{
 		cout << " ANO NÃO ";
 	}
@@ -32,11 +46,9 @@ Virus::Virus ( int anoVirus )
 Virus::Virus ( const Virus &substrato)
 {
 
-	this-> nomeVirus= substrato.nomeVirus;
-	this-> anoVirus = substrato.anoVirus;
-	this-> efeitoVirus = substrato.efeitoVirus;
-	
-	
+	this-> nomeDoVirus= substrato.nomeDoVirus;
+	this-> anoDoVirus = substrato.anoDoVirus;
+	this-> efeitoDoVirus = substrato.efeitoDoVirus;
  
 }
 
@@ -50,7 +62,7 @@ Virus::Virus ( const Virus &substrato)
 void Virus::printVirus( ) const
 {
 	
-	 cout << this->nomeVirus << "\n";
+	 cout << this->nomeDoVirus << "\n";
 	 
 }
 
@@ -58,5 +70,6 @@ void Virus::printVirus( ) const
 void Virus::infoVirus() const 
 {
 	
-	cout <<"O (s) nome (s) cadatrado (s) foi (foram ): " << nomeVirus;
+	cout <<"O (s) nome (s) cadatrado (s) foi (foram ): " << nomeDoVirus;
+	
 }

@@ -8,30 +8,28 @@ using std::cin;
 #include <string>
 using std::string;
 
+using std::ostream; 
+
 class Assinante 
 {
+friend ostream &operator <<(ostream & , const Assinante &);
 
 public:
 //Construtores:
 
-     Assinante( const string & = "", int = 0, int = 0, const string & = "" ); 
+     Assinante(  int = 0, const string & = "", int = 0, int = 0, const string & = ""); 
 	 Assinante( int  );
      Assinante( const Assinante& );
 	 
 //Metodo:
 
-     void infoAssinante ( ) const ;
 	 void printUser( ) const;
-	 
 	 void setId( int );
-	 
-	 void setNameUser( const string & );
-	 
-	 void setTypeSubs( const string & );
-	 
+	 void setNUser( const string & );
+	 void setType( const string & );
 	 void setPassword( int );
+	 void infoAssinante ( ) const ;
 	 
-	
 private:
 //Atributos:
 
@@ -39,7 +37,8 @@ private:
 	string tipoDeAssinatura;
 	int idDoAssinante;
 	int senha;
-
+	int quantidadeDeAssinante;
+    
 };
 
 #endif // ASSINANTE_H

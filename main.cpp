@@ -1,6 +1,4 @@
-
-
-#include "McAffe.h"
+#include "McAfee.h"
 #include "Virus.h"
 #include "Assinante.h"
 #include <iostream>
@@ -24,49 +22,12 @@ using std::string;
 
 
 
-
-int main(int argc, char **argv)
-{
-	
-	
-	Virus *listaVirus = 0;
-	int  quantityVirus = 0;
-	string nameVirus;
-	string efeitoVirus;
-	int  anoVirus = 0;
-	
-	Assinante *listaUsuario = 0;
-	int quantityUser = 0;
-	string nameUser;
-	
-	
-	McAffe antivirus;
-	McAffe usuario;
-
-
-	McAffe *listadeAntivirus = 0;
-	int nAssinantes = 0;
-	int id;
-	string name;
-	int pass;
-	string typeS;
-	int indexUser;
-
-	/*McAffe test;
-	
-	cout << "asdfasd";
-	test.setConfigUser("adas", 12234,  "srasd", 12344);
-**/
-
-			int menu;
-
-
-//	do {
-	
+void menuPrincipal( )
+{	
 	
 		cout << "                 B E M  -  V I N D O  \n\n";
 		cout << "                       A O  \n\n";
-		cout << "                   M C A F F E      \n\n";
+		cout << "                   M C A F E E      \n\n";
 		cout << "\n";
 		cout << "      Segurança cibernética do dispositivo à nuvem\n";
 	
@@ -76,319 +37,266 @@ int main(int argc, char **argv)
 		cout << "                    M E N U  \n ";
 		cout << "\n";
 
-		cout << "1- Novo usuario\n";
-        cout << "2- Entre\n";
-		cout << "3- Adicionar Vírus\n";
-		cout << "4- Acesso restrito\n";
-		cout << "5-Sair\n";
-		   cin >> menu;
-	    cout << "\n";
-		
+		cout << "1 - Verifique qual é o melhor pacote para você\n";
+        cout << "2 - Cadastra-se\n";
+		cout << "3 - Entre\n";
+		cout << "4 - Sair";
+	
+}		
 
-switch (menu)
+
+int  possibilidadeVirus( int question, int question1, int question2, int question3 )
 {
-				
-  case 1 :
-							
+		
+		
+		
 		cout << "Verifique a possibilidade do seu computador está infectado.\n"; 
 							
 		int pergunta;
 		int resposta1;
 		int resposta2;
 		int resposta3;
-								
-		cout << "\n"; 
+		int soma;
+	
 				
 		cout << "Você utiliza algum tipo de antivirus?\n";
 		cout << "1-Sim\n2-Nao\n";
-		cin >> pergunta;
-		while (pergunta != 1 && pergunta !=2)
-		{
-			cout << " Você digitou uma opção invalida , por favor , digite novamente";
-				cin >> pergunta;
-		}
+			cin >> pergunta;
+		
+		
+while ( pergunta != 1 && pergunta !=2 )
+{
+   cout << " Você digitou uma opção invalida , por favor , digite novamente";
+   cin >> pergunta;
+}
+			
 								
-								
-		switch (pergunta)
-                    {
-					
-							case 1:
+switch (pergunta)
+{
+	
+			 			
+case 1:
 																						 
-
-								cout << "Você utiliza senhas forte?\n";
-								cout << "1-Sim\n0-Nao\n";
-								cin >>resposta1;
+          
+			cout << "Você utiliza senhas forte?\n";
+			cout << "1-Sim\n0-Nao\n";
+				cin >>resposta1;
 																										
 									cout << "\n";
 																										
-							    cout <<"Você tem cuidado quando abre e-mail?\n";
-								cout << "1-Sim\n0-Nao\n";
-							    cin >>resposta2;
+			cout <<"Você tem cuidado quando abre e-mail?\n";
+			cout << "1-Sim\n0-Nao\n";
+				cin >>resposta2;
 																										
 						         cout << "\n";
 																										
-							   cout <<"Você sempre atualiza o seu sistema operacional?\n";
-							   cout << "1-Sim\n0-Nao\n";
-							      cin >>resposta3;
+			cout <<"Você sempre atualiza o seu sistema operacional?\n";
+			cout << "1-Sim\n0-Nao\n";
+				cin >>resposta3;
 																										
-							    cout << "\n";					
+							    cout << "\n";				
+     soma =  resposta1 + resposta2 + resposta3;
 
-							    antivirus.verificarVirus( resposta1 + resposta2 + resposta3 );
-								
-								 int cadastro;
-								 
-						       cout << " Você deseja se cadastar ?\n";
-								cout << "1-SIM\n2-NÃO\n";
-									cin >> cadastro; 
-									
-									
-								if ( cadastro == 1 )
-								{
-													 
-												quantityUser = 1;
-															
-											for( int i =0; i < quantityUser; i++)
-											{
-															   
-												cout << "Entre com o nome do novo usuario \n " ;
-												cin >> nameUser;
-												usuario.addUser( Assinante( nameUser )  );
-												//Assinante user ( nameUser );  
-												//usuario.addUser( user );
-															
-											}
-								}	 
-								else 
-								{
-												 
-											cout << "  Saindo ....";
-				 
-								}
-								 
-									
-							break;
-																											
-							case 2 :
-													
-													
-								cout << "Os programas padroes do deu computador estão funcionando?\n ";
-								cout << "1-Sim\n 0-Nao\n";
-									cin >>resposta1;
-								cout << "\n";																		
-                                cout << "Seu computador está muito lento?\n";
-								cout << "1-Sim\n 0-Nao\n";
-									cin >>resposta2;
-						        cout << "\n";			
-																												
-								cout << "Você recebe e mails e posts suspeitos em redes sociais?\n";    
-								cout << "1-Sim\n 0-Nao\n";
-									cin >>resposta3;
-							    cout << "\n";			
-																											
-								antivirus.verificarVirus( resposta1 + resposta2 + resposta3 );
-								
-							cout << " Você deseja se cadastar ?\n";
-							cout << "1-SIM\n2-NÃO\n";
-									cin >> cadastro; 
-									
-							if ( cadastro == 1 )
-							{
-													 
-								quantityUser = 1;
-															
-							for( int i =0; i < quantityUser; i++)
-							{
-															   
-								cout << " Qual é o seu primeiro nome? \n " ;
-								   getline ( cin, nameUser);
-								usuario.addUser( Assinante( nameUser )  );
-								//Assinante user ( nameUser );  
-								//usuario.addUser( user );
-								
-								cout << "Seu nome foi cadastrado com sucesso";
-								antivirus.printUser();
-															
-							}
-							}
-							else 
-							{
-												 
-							cout << "  Saindo ....";
-				 
-							}
-								
-							  break;
-																					
-					}
-										
-   break;
-		
-	
-				
-  case 2 :
-										
-   antivirus.tiposDeAssinaturas();
-										
-  break;
-		
-		
-		
-		
-case 3:
-
-										
-	int perguntaVirus;
-	cout << " Menu\n";
-	cout << "1-Adicionar nome do virus\n";
-	cout << "2-Visualizar os vírus adicionados\n";
-		cin >> perguntaVirus;
-													   
-			switch (perguntaVirus)
-				      {
-								case 1:
-								
-								
-									cout << "Quantos vírus você deseja cadastrar ?\n";
-										cin >> quantityVirus;
-																				
-								for( int i =0; i < quantityVirus; i++)
-								{
-										cout << "Escreva o nome do virus\n";
-											cin >> nameVirus;
-										Virus virus( nameVirus );
-										antivirus.adicionarVirus( virus );
-																	
-								}
-								
-								break;
-												 
-							
-								
-								
-						
-								case 2 :
-								
-										 if ( quantityVirus == 0 )
-										 {
-											 
-											 cout << " Não foi adicionado nenhum vírus";
-											 
-										}
-										else 
-										{
-											
-											antivirus.printVirus();
-											
-									     }
-																		
-
+	 return soma;
  
-								break;
-											   
-					}
-					
-					
+									
 break;
-							
+																											
+case 2 :
+													
+
+				cout << "Os programas padroes do deu computador estão funcionando?\n ";
+				cout << "1-Sim\n 0-Nao\n";
+					cin >>resposta1;
+				cout << "\n";																		
+				cout << "Seu computador está muito lento?\n";
+				cout << "1-Sim\n 0-Nao\n";
+					cin >>resposta2;
+				cout << "\n";			
+																												
+				cout << "Você recebe e mails e posts suspeitos em redes sociais?\n";    
+				cout << "1-Sim\n 0-Nao\n";
+					cin >>resposta3;
+				cout << "\n";			
+				cout << " hije va 1";								
+      soma =  resposta1 + resposta2 + resposta3;
 
 
-case 4:
+    return soma;
+   
+	break;
+}
+}
 
-												
-	int senhadeacesso;
-	cout << " Digite a senha ";
+
+void menuSecundario ()
+{
 	
-		cin >> senhadeacesso;
+cout << " BEM VINDO \n\n";
+cout << "Escolha uma opção\n";	
+cout << "1 - Adicionar vírus\n";
+cout << "2 - Comparação de Antivírus\n";
+cout << "3 -Mostrar todas as informaçõe do programa \n";
+	
+	
+}
+
+
+int main(int argc, char **argv)
+{
+	
+	
+	Virus *listaVirus = 0;
+	int  qVirus = 0;
+	string nVirus;
+	string eVirus;
+	int  aVirus = 0;
+	
+	Assinante *listaUsuario = 0;
+	int qUser;
+  string nUser;
+   int pUser;
+   int idUser;
+   string tUser;
+
+	McAfee *listadeAntivirus = 0;
+	int numeroAssinantes = 0;
+	int identidade;
+	string nome;
+	int senha;
+	string tipoAssinatura;
+	int indexUser;
+
+	McAfee antivirus;
+	McAfee antivirus1;
+	McAfee copia; 
+	
+  int menu;
+  int question;
+  int question1;
+  int question2;
+  int question3;
+  int answer;
+  
+
+
+
+menuPrincipal();
+cout << "\n";
+	cin >> menu;
+	  
+while ( menu > 4 )	
+{
+	 cout << " Opção  invalida, por favor tente d novo  "; 
+	 cin >> menu;
+}
+	
+	
+switch (menu)
+{
+	 case 1:
+	 
+	antivirus.verificarVirus( possibilidadeVirus ( question, question1, question2, question3 ) ); 
+
+
+	 break;
+	 
+	 case 2 :
+	 
+	cout << "Quantos usuarios você quer adicionar \n";
+	cin >> qUser;
+	
+
+
+	for (int i = 0; i < qUser; i++)
+	{
+								
+            cout << "Escreva o seu nome";
+			getline ( cin, nUser );
+			
+			cout <<"Escreve o seu ID";
+			cin >> idUser;
+			
+			cout << "Escreva a sua senha";
+			cin >> pUser;
+			
+			cout << "Escreva o seu pacote";
+			cin >> tUser;
+			
+	
+			
+			Assinante user (  qUser, nUser, idUser,  pUser, tUser);
+			antivirus.addUser( user );
+																	
+	}
+	 break;
+	 
+	 case 3 :
+	 
+	int senha;
+	int resposta;
+	
+	cout << "Digite a senha para poder entrar\n ";
+	cin >> senha ;
+	
+	while ( senha != 4698)
+	{
 		
+		cout << " Senha invalida , tente novamente";
+		cin >> senha;
 		
-	while ( senhadeacesso != 4698 )
-    {
-		
-			cout << " Senha incorreta , por favor , tente novamente\n";
-				cin >> senhadeacesso;
-												
 	}
 	
-		 int  secreto; 
-		 cout <<  "O que você deseja fazer ?\n";
-		 cout << " \n";
-	     cout << "1-Adicionar novos usuarios\n";
-		 cout << "2-Fazer teste \n";
-		cin >> secreto;
+	menuSecundario () ;
+	cin >> resposta;
+	
+	switch ( resposta )
+	{
 		
-				  switch (secreto)
-					{
-						 case 1 :
-						 cout << "Quantos assinantes você deseja adicionar ?\n";
-							cin >> nAssinantes;
-						  listadeAntivirus = new McAffe[  nAssinantes ];
+		case 1:
+			
+		cout << "Quantos vírus você deseja cadastrar ?\n";
+		cin >> qVirus;
+																				
+			for( int i =0; i < qVirus; i++)
+			{
+					cout << "Escreva o nome do virus\n";
+					getline (cin, nVirus);
 					
-							for( int i = 0; i < nAssinantes; i++ )
-							{
-							 
-							  
-								cout << "Adicione o ID do usuario\n";
-							    cin >> id;
-								cout << "Adicione o nome do novo usuario\n";
-								getline( cin, name );
-								cout << "Tipo de assinatura\n";
-								getline( cin, typeS );
-								cout << "Adicione uma senha para o usuario\n";
-								cin >>pass;
-								
-								cout << "User " << i << '\n';
-								listadeAntivirus[ i ].setConfigUser( name, id, typeS, pass, indexUser );  
-								
-								
-							}
-						
-									
-								for( int i = 0; i < nAssinantes; i++ )
-								{
-									cout << "Entre com sua senha\n";
-									cin >> pass;
-									listadeAntivirus[ i ].setSenha( pass );
-								}
-													
-						
-
-					break;
-
-					case 2 :
-           
-							int indexUser;
-							cout << "Para qual usuario voce quer fazerr o teste\n";
-							cin >> indexUser;
-							McAffe tempAntivirus = listadeAntivirus[ indexUser];	
-						   //listadeAntivirus[ indexUser];
-
-                  break;
-
-					}		
-break;
-				
+					cout << " Escreva o numero do vírus";
+					cin >> aVirus;
+					
+					cout << "Escreva o efeito do vírus";
+					getline( cin ,eVirus);
+					
+			Virus virus( nVirus , aVirus, eVirus );
+			antivirus.addVirus( virus );
+																	
+			}
+		
+		break;
+		
+		case 2:
+		
+		if( antivirus == antivirus1 )
+			{
+		  cout << "Antivirus sao iguais";
+			}
+			else 
+			{
+		  cout << " Antivirus são diferentes ";
+			}
+		
+		break;
+		
+		case 3 :
+		
+		break;
+		
+		
+	}
+	
+	 break;
 }
-
-//}while ( menu  !=  5 );
-
-
-
-
-		 cout << "\n";
-		 cout << "\n";
-	    cout << "Projeto criado por " << antivirus.getNome( );  
-
-
- 
 }
-
-
-
-
-
-
-
-
-
-
 

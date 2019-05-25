@@ -1,5 +1,4 @@
 #include "Assinante.h"
-#include "McAffe.h"
 #include <iostream>
 using std::cout;
 using std::cin;
@@ -7,24 +6,29 @@ using std::cin;
 #include <string>
 using std::string;
 
-//Construtor:
-
-Assinante::Assinante ( const string &nameUser, int id , int passwd, const string &assinatura  )
-
+ostream &operator << (ostream & print, const Assinante &user )
 {
-	this-> nomeDoAssinante = nameUser;
-	this-> idDoAssinante = id;
-	this-> senha = passwd;
-	this-> tipoDeAssinatura = assinatura;
-	
 
+ print << "O dados do usuario é  :  " << user.nomeDoAssinante << '\t' << user.tipoDeAssinatura << '\t' << user.idDoAssinante<< '\t' << user.senha <<'\n';
+ 
+return  print ;
 
 }
 
 
+//Construtor:
+
+Assinante::Assinante ( int qUser , const string &nUser, int idUser, int pUser, const string &tUser )
+
+{
+	this ->quantidadeDeAssinante = qUser;
+	this-> nomeDoAssinante = nUser;
+	this-> idDoAssinante = idUser;
+	this-> senha = pUser;
+	this-> tipoDeAssinatura = tUser;
 
 
-
+}
 
 
 Assinante::Assinante ( int id ) 
@@ -38,19 +42,15 @@ Assinante::Assinante ( int id )
 			
 }
 
-
 Assinante::Assinante ( const Assinante &origem )
 {
  
-	
-	
 	this->nomeDoAssinante = origem.nomeDoAssinante;
 	this->idDoAssinante =origem.idDoAssinante;
 	this->tipoDeAssinatura= origem.tipoDeAssinatura;
 	this->senha = origem.senha;
+
 }
-
-
 
 
 //Metodo:
@@ -63,13 +63,7 @@ void Assinante::printUser( ) const
 }
 
 
-void Assinante ::infoAssinante ( ) const 
- {
-	 
-	 cout << " O(s) nome(s) cadatrado (s) foi (foram) : " << nomeDoAssinante;
-	 
- }
- 
+
  
 void Assinante:: setId( int id )
 {
@@ -79,7 +73,7 @@ void Assinante:: setId( int id )
 }
 
 
-void  Assinante::setNameUser( const string &name ) 
+void  Assinante::setNUser( const string &name ) 
  {
 	 
 	  this-> nomeDoAssinante = name;
@@ -87,7 +81,7 @@ void  Assinante::setNameUser( const string &name )
  }
  
  
- void Assinante::setTypeSubs(  const string &typeS )
+ void Assinante::setType(  const string &typeS )
 {
 	
  this-> tipoDeAssinatura = typeS;
@@ -100,6 +94,13 @@ void  Assinante::setNameUser( const string &name )
  {
 	 
 	 this-> senha = pass ;
+	 
+ }
+ 
+void Assinante ::infoAssinante ( ) const 
+ {
+	 
+	 cout << " O(s) nome(s) cadatrado (s) foi (foram) : " << nomeDoAssinante;
 	 
  }
  

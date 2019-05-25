@@ -9,15 +9,19 @@ using std::cin;
 #include <string>
 using std::string;
 
+using std::ostream;
+
 
 class Virus 
 {
 	
+friend ostream &operator <<(ostream & , const Virus &);
+
 public:
 
 //Construtores:
 
-	Virus( const string & = "", int = 0, const string & = "" );
+	Virus( const string & = "", int = 0, const string & = "" , int = 0 );
 	Virus( int );
 	Virus (const Virus&);
 	
@@ -28,101 +32,18 @@ public:
 	//~Virus();
 	
 //Metodos:
-        void infoVirus() const ;
+   
 		void printVirus( ) const;
-		
+		void infoVirus() const ;
 
 private:
 //Atributos:	
 
-
-		string nomeVirus;
-		int anoVirus;
-		string efeitoVirus;
+		int quantidadeDeVirus;
+		string nomeDoVirus;
+		int anoDoVirus;
+		string efeitoDoVirus;
 
 };
 
-
-
-/*
- * 
- * 
- * 	cout << " Você deseja se cadastar ?\n";
-								cout << "1-SIM\n2-NÃO\n";
-									cin >> cadastro; 
-											if ( cadastro == 1 )
-											 {
-													 
-												quantityUser = 1;
-															
-											for( int i =0; i < quantityUser; i++)
-											{
-															   
-												cout << "Entre com o nome do novo usuario \n " ;
-												cin >> nameUser;
-												usuario.addUser( Assinante( nameUser )  );
-												//Assinante user ( nameUser );  
-												//usuario.addUser( user );
-															
-											}
-											}	 
-											else 
-											 {
-												 
-											cout << "  Saindo ....";
-				 
-											}
-											 
-**/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #endif // VIRUS_H
-
-

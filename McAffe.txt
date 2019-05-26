@@ -1,1 +1,0 @@
-./Release/McAffe.cpp.o ./Release/Assinante.cpp.o ./Release/Virus.cpp.o ./Release/main.cpp.o

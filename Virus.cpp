@@ -8,15 +8,6 @@ using std::string;
 
 using std::ostream; 
 
-ostream &operator << (ostream & print, const Virus &virus )
-{
-
- print << "O nome, o ano e o efeito do vírus são :  " << virus.nomeDoVirus<< '\t' << virus.anoDoVirus << '\t' << virus.efeitoDoVirus<< '\n';
- 
-return  print ;
-
-}
-
 
 
 //Construtores:
@@ -58,6 +49,17 @@ Virus::Virus ( const Virus &substrato)
 
 
 // Metodos:
+
+
+ostream &operator << (ostream & print, const Virus &virus )
+{
+
+ print << "O nome, o ano e o efeito do vírus são :  " << virus.nomeDoVirus<< '\t' << virus.anoDoVirus << '\t' << virus.efeitoDoVirus<< '\n';
+ 
+return  print ;
+
+}
+
 
 void Virus::printVirus( ) const
 {

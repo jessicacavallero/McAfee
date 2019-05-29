@@ -277,7 +277,7 @@ switch (menu)
 		break;
 		
 		case 2:
-		
+	/*	
 		if( antivirus == antivirus1 )
 			{
 		  cout << "Antivirus sao iguais";
@@ -288,7 +288,7 @@ switch (menu)
 			}
 		
 		break;
-		
+		**/
 		case 3 :
 		
 		break;

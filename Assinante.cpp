@@ -6,14 +6,7 @@ using std::cin;
 #include <string>
 using std::string;
 
-ostream &operator << (ostream & print, const Assinante &user )
-{
 
- print << "O dados do usuario é  :  " << user.nomeDoAssinante << '\t' << user.tipoDeAssinatura << '\t' << user.idDoAssinante<< '\t' << user.senha <<'\n';
- 
-return  print ;
-
-}
 
 
 //Construtor:
@@ -54,6 +47,14 @@ Assinante::Assinante ( const Assinante &origem )
 
 
 //Metodo:
+ostream &operator << (ostream & print, const Assinante &user )
+{
+
+ print << "O dados do usuario é  :  " << user.nomeDoAssinante << '\t' << user.tipoDeAssinatura << '\t' << user.idDoAssinante<< '\t' << user.senha <<'\n';
+ 
+return  print ;
+
+}
 
 void Assinante::printUser( ) const
 {

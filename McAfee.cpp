@@ -5,6 +5,74 @@
 using std::string;
 using std::ostream;
 
+
+//Construtores :
+
+McAfee::McAfee(int qUsuario , const string &nUsuario, int idUsuario, int pUsuario, const string &tUsuario) // Construtor que recebe todos os argumentos
+//:Assinante( )
+{
+
+	setUser(qUsuario);
+
+	setName(nUsuario);
+
+	setIdUser(idUsuario);
+
+	setPassword(pUsuario);
+
+	setType( tUsuario);
+	
+	this-> vetorUser = new Assinante*[ qUsuario ];
+
+}
+
+McAfee::McAfee(  ) // Construtor que não recebe nenhum dos argumentos
+//: Assinante ()
+{
+	this-> nUsuario = " ";
+	this-> idUsuario = 0;
+	this-> qUsuario = 0;
+	this-> tUsuario  = " ";
+	
+	this->vetorUser = new Assinante*[qUsuario];
+	
+}
+
+McAfee::McAfee( const  McAfee &base )
+{
+
+		this->soma = base.soma;
+		this->qVirus = base.qVirus;
+		this->qUsuario = base.qUsuario;
+		
+				
+		if( user != 0 )
+			delete [ ] user;
+			
+		user = new Assinante[  this->qUsuario ];		
+		for( int i = 0; i < this->qUsuario; i++ )
+			this->user[ i ] = base.user[ i ];
+			
+			if ( virus != 0 )
+			    delete [ ] virus;
+		
+       virus = new Virus [ this->qVirus ];
+	      for ( int i = 0; i < this -> qVirus; i++)
+			this -> virus [ i ]  = base.virus[ i ];
+			
+			if ( user !=0 )
+				delete [] user;
+}
+
+
+//Destrutores:
+McAfee:: ~McAfee( )
+{
+	
+	
+}
+
+//Metodos:
 ostream &operator <<(ostream & print, const McAfee & antivirus )
 {
 
@@ -123,74 +191,8 @@ bool McAfee::operator < ( const McAfee &right )const
 }
 
 
-//Construtores :
-
-McAfee::McAfee(int qUsuario , const string &nUsuario, int idUsuario, int pUsuario, const string &tUsuario) // Construtor que recebe todos os argumentos
-//:Assinante( )
-{
-
-	setUser(qUsuario);
-
-	setName(nUsuario);
-
-	setIdUser(idUsuario);
-
-	setPassword(pUsuario);
-
-	setType( tUsuario);
-	
-	this-> vetorUser = new Assinante*[ qUsuario ];
-
-}
-
-McAfee::McAfee(  ) // Construtor que não recebe nenhum dos argumentos
-//: Assinante ()
-{
-	this-> nUsuario = " ";
-	this-> idUsuario = 0;
-	this-> qUsuario = 0;
-	this-> tUsuario  = " ";
-	
-	this->vetorUser = new Assinante*[qUsuario];
-	
-}
 
 
-McAfee::McAfee( const  McAfee &base )
-{
-
-		this->soma = base.soma;
-		this->qVirus = base.qVirus;
-		this->qUsuario = base.qUsuario;
-		
-				
-		if( user != 0 )
-			delete [ ] user;
-			
-		user = new Assinante[  this->qUsuario ];		
-		for( int i = 0; i < this->qUsuario; i++ )
-			this->user[ i ] = base.user[ i ];
-			
-			if ( virus != 0 )
-			    delete [ ] virus;
-		
-       virus = new Virus [ this->qVirus ];
-	      for ( int i = 0; i < this -> qVirus; i++)
-			this -> virus [ i ]  = base.virus[ i ];
-			
-			if ( user !=0 )
-				delete [] user;
-}
-
-
-//Destrutores:
-McAfee:: ~McAfee( )
-{
-	
-	
-}
-
-//Metodos:
 string McAfee::verificarVirus ( int soma  )
 {
       

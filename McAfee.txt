@@ -1,1 +1,0 @@
-./Debug/main.cpp.o ./Debug/McAfee.cpp.o ./Debug/Virus.cpp.o ./Debug/Assinante.cpp.o

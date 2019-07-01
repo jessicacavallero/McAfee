@@ -1,4 +1,3 @@
-
 #ifndef ASSINANTE_H
 #define ASSINANTE_H
 

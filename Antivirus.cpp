@@ -3,11 +3,19 @@
 Antivirus::Antivirus(  ) // Construtor que não recebe nenhum dos argumentos
 : SoftwareDeSeguranca( )
 {
-	this-> nUsuario = " ";
+    this-> nUsuario = " ";
 	this-> idUsuario = 0;
 	this-> qUsuario = 0;
 	this-> tUsuario  = " ";
-	
+    this-> qVirus = 0;
+    this-> eVirus = "";
+    this-> aVirus = 1998;
+    this-> ameacaA = true;
+	this-> atualizacaoA = true;
+    this-> pontoA = true;
+    this-> idade = 0;
+    this-> senha = 0;
+    
 }
 
 Antivirus::Antivirus( const  Antivirus &base )
@@ -61,23 +69,106 @@ ostream &operator <<(ostream & print, const Antivirus & antivirus )
 }
 
 
-void Antivirus::verificarVirus ( int soma )
+bool Antivirus::verificarAmeaca( bool threat )
 {
-
-	if ( soma == 3 )
-	{
-		cout << "\n";
-		cout << " A partir das suas respostas o seu computador provalmente não está infectado, para continuar assim utilize o Internet Security.\n";
-		cout << " Melhore sua experiencia e assine o McAffe\n ";
-	}
-	else 
-	{
-		cout << "\n";
-		cout << "A partir das suas respostas há uma possibilidade de seu computador ter um arquivo infectado, para ficar livre de qualquer vírus utilize o  Total Security.\n";
-		cout << "  Usando o McAffe você fica seguro e livre de qualquer vírus \n";	
-	}
-						 
+    if ( ameacaA == true) 
+    {
+        cout << "Procurando por vírus \n"; 
+    }
+    else
+    {
+        cout << "A verificação ficará para outra hora\n" ;
+    }
 }
+
+bool Antivirus::fazerAtualizacoes ( bool update )
+{
+    if (atualizacaoA == true )
+    {
+        
+        cout << " Fazendo atualização no banco de dados do antivirus\n";
+    }
+    else
+    {
+        cout << "Você cancelou a atualização\n";
+    }
+    
+}
+
+bool Antivirus::pontoDeRestauracao ( bool spot )
+{
+    if ( pontoA == true )
+    {
+        cout << "Seu ponto de restauração está sendo feito \n ";
+    }
+    else 
+    {
+        cout << "Você não tem ponto de restauração\n";
+    }
+}
+
+int Antivirus::idadeDeAcesso ( int age )
+{
+      if ( idade >= 18)
+    {
+        cout << " Você está liberado para acessar qualquer site\n";
+    }
+    else 
+    {
+        cout << " Você poderá acessar a internet, porém alguns sites serão bloqueados\n";
+    }
+    
+}
+
+
+void Antivirus::criacaoDeSenha ()
+{
+     int i;
+    
+    cout << "Sua senha é : \n";
+    for (i=0; i<8; i++)
+        senha = ("%d", rand() %9);
+        cout << senha;
+    
+}
+
+
+
+bool Antivirus::operator != (const Antivirus &right ) 
+
+{
+		return ! ( *this == right );
+
+}
+
+const Antivirus &Antivirus::operator = ( const Antivirus &right ) 
+{
+    ameacaA = right.ameacaA ;
+    atualizacaoA = right.atualizacaoA;
+    pontoA = right.pontoA; 
+    idade = right.idade;
+    senha = right.senha;
+   
+	return *this;
+}
+
+
+bool Antivirus::operator == ( const Antivirus &right)const
+{
+    if ( ameacaA != right.ameacaA)
+		return false;
+    if (atualizacaoA != right.atualizacaoA)
+		return false;
+    if (pontoA != right.pontoA)
+		return false;
+    if (idade != right.idade)
+		return false;
+    if (senha != right.senha)
+		return false;
+  
+    return true;
+}
+
 
 void Antivirus::adicionarUsuario( const Assinante&usuario )
 {
@@ -136,63 +227,3 @@ void Antivirus::adicionarVirus( const Virus&ameaca )
 	}
 }
 
-bool Antivirus::verificarAmeaca( bool ameaca )
-{
-    if ( ameaca == true) 
-    {
-        cout << "Procurando por vírus \n"; 
-    }
-    else
-    {
-        cout << "A verificação ficará para outra hora\n" ;
-    }
-}
-
-bool Antivirus::fazerAtualizacoes ( bool atualizacao )
-{
-    if (atualizacao == true )
-    {
-        
-        cout << " Fazendo atualização\n";
-    }
-    else
-    {
-        cout << "Você cancelou a atualização\n";
-    }
-    
-}
-
-bool Antivirus::pontoDeRestauracao ( bool ponto )
-{
-    if ( ponto == true )
-    {
-        cout << "Seu ponto de restauração está sendo feito \n ";
-    }
-    else 
-    {
-        cout << "Você não tem ponto de restauração\n";
-    }
-}
-
-int Antivirus::idadeDeAcesso ( int idade )
-{
-      if ( idade >= 18)
-    {
-        cout << " Você está liberado para acessar qualquer site\n";
-    }
-    else 
-    {
-        cout << " Você poderá acessar a internet, porém alguns sites serão bloqueados\n";
-    }
-    
-}
-void Antivirus::criacaoDeSenha ()
-{
-     int i;
-    
-    cout << "Sua senha é : \n";
-    for (i=0; i<8; i++)
-        senha = ("%d", rand() %9);
-        cout << senha;
-    
-}

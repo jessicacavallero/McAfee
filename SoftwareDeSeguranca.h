@@ -22,9 +22,11 @@ public:
 	SoftwareDeSeguranca ( const SoftwareDeSeguranca& );
     virtual~SoftwareDeSeguranca();
     
-    virtual bool verificarAmeaca( int ) = 0;
-    virtual bool fazerAtualizacoes ( int ) = 0;
-    virtual bool pontoDeRestauracao ( int ) = 0;
+    virtual bool verificarAmeaca( bool ) = 0;
+    virtual bool fazerAtualizacoes ( bool ) = 0;
+    virtual bool pontoDeRestauracao ( bool  ) = 0;
+    
+    void nome();
     
     const SoftwareDeSeguranca &operator = ( const SoftwareDeSeguranca &);
     bool operator == (const SoftwareDeSeguranca & ) const;
@@ -33,10 +35,10 @@ public:
     
 private:
 
-int resultadoAmeaca;
-static const string NOME;
+
+const static string NOME;
 
    
 };
 
-#endif // SOFTWAREDESEGURANCA_H
+#endif // SOFTWAREDESEGURANCA_HH

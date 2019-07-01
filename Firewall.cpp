@@ -1,28 +1,50 @@
 #include "Firewall.h"
 
+Firewall::Firewall( string &ip, string &mask)
+: SoftwareDeSeguranca( )
+{
+    this-> ip = "";
+    this-> mascara = "";
+}
+
 Firewall::Firewall()
 : SoftwareDeSeguranca( )
 {
-    this->  ip = ""; 
-    this->  ip3 = 0;
-
+    this-> ameacaF = true;
+    this-> atualizacaoF = true;
+    this-> pontoF = true;
+    this-> mostrar = "";
+    this-> bloqueio = false;
 }
 
 Firewall::Firewall ( const Firewall &base )
 : SoftwareDeSeguranca( base )
 {
-    ip = base.ip; 
-    ip3 = base.ip3;
-    
+
+    ameacaF = base.ameacaF ;
+    atualizacaoF = base.atualizacaoF;
+    pontoF = base.pontoF;
+    ip = base.ip;
+    bloqueio = base.bloqueio;
 }
 
 Firewall::~Firewall()
 {
 }
 
-bool Firewall::verificarAmeaca( bool ameacaf )
+
+ostream &operator <<(ostream & print, const Firewall & firewall )
 {
-    if ( ameacaf == true) 
+
+     print << "A ameaça, a atualização, o ponto, o ip e bloqueio foram:  "<< firewall.ameacaF << firewall.atualizacaoF << firewall.pontoF << firewall.ip << firewall.bloqueio;
+    
+        return print;
+ 
+}
+
+bool Firewall::verificarAmeaca( bool threat )
+{
+    if ( ameacaF == true) 
     {
         cout << "Procurando por intrusos na rede \n"; 
     }
@@ -32,9 +54,9 @@ bool Firewall::verificarAmeaca( bool ameacaf )
     }
 }
 
-bool Firewall::fazerAtualizacoes ( bool atualizacaof )
+bool Firewall::fazerAtualizacoes ( bool update )
 {
-    if ( atualizacaof == true )
+    if ( atualizacaoF == true )
     {
         
         cout << " Fazendo atualização\n";
@@ -46,9 +68,9 @@ bool Firewall::fazerAtualizacoes ( bool atualizacaof )
     
 }
 
-bool Firewall::pontoDeRestauracao ( bool pontof )
+bool Firewall::pontoDeRestauracao ( bool spot )
 {
-    if ( pontof == true )
+    if ( pontoF == true )
     {
         cout << "Seu ponto de restauração está sendo feito \n ";
     }
@@ -59,31 +81,53 @@ bool Firewall::pontoDeRestauracao ( bool pontof )
 }
 
 
-void descobrindoip( string ip , int ip3)
+void Firewall::mostrarIp()
+{
+    if ( mostrar = true )
+    {
+        cout << "Seu IP é 187.180.88.169\n";
+    }
+
+}
+
+void Firewall::bloquearAcessoNaRede()
 {
     
-  string ipdopc;
-  int inicio;
-  
-    if ( inicio > 1 && inicio < 127 )
+    if( bloqueio == true)
     {
-        
-       cout << "O seu IP " << ipdopc << "A classe da sua rede é A \n"; 
-        
-    }
-    if  ( inicio > 128 && inicio < 191 )
-    {
-        
-        cout << "O seu IP " << ipdopc << "A classe da sua rede é B \n";
+        cout << "Você bloqueou o seu acesso a rede\n";
     }
     else 
     {
-        cout << "O seu IP " << ipdopc << "A classe da sua rede é C \n";
+        cout << "Seu acesso está liberado\n";
     }
+    
+}
+
+void Firewall::dadosDeRede()
+{
+    
+   cout << "O Ip é :" << ip;
+   cout << "A mascara é :" << mascara;
     
     
 }
 
+/*
+void Firewall::avaliar( SoftwareDeSeguranca *software)
+{
+    
+    software -> verificarAmeaca( bool  );
+    software -> fazerAtualizacoes( bool update  );
+    software -> pontoDeRestauracao ( bool spot );
+    
+    if ( typeid (*software).name() == typeid (Firewall).name() )
+    {
+        cout << "something"; 
+    }
+}
+
+**/
 bool Firewall::operator != (const Firewall &right ) 
 
 {
@@ -93,9 +137,12 @@ bool Firewall::operator != (const Firewall &right )
 
 const Firewall &Firewall::operator = ( const Firewall &right ) 
 {
+   
+    ameacaF = right.ameacaF ;
+    atualizacaoF = right.atualizacaoF;
+    pontoF = right.pontoF;
     ip = right.ip;
-    ip3 = right.ip3;
-	
+    bloqueio = right.bloqueio;
     
 	return *this;
 }
@@ -103,10 +150,22 @@ const Firewall &Firewall::operator = ( const Firewall &right )
 
 bool Firewall::operator == ( const Firewall &right)const
 {
-	if (ip != right.ip)
+    if (ameacaF != right.ameacaF)
 		return false;
-    if (ip3 != right.ip3)
+    if (atualizacaoF != right.atualizacaoF)
 		return false;
-  
-    return true;
+    if (pontoF != right.pontoF)
+		return false;
+    if ( ip != right.ip)
+		return false;
+    if (bloqueio != right.bloqueio)
+		return false;
+    
+    
+   return true;
 }
+
+
+
+
+

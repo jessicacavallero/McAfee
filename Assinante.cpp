@@ -1,16 +1,11 @@
 #include "Assinante.h"
 
-#include <iostream>
-using std::cout;
-using std::cin;
 
-#include <string>
-using std::string;
 
 Assinante::Assinante ( int qUser , const string &nUser, int idUser, int pUser, const string &tUser )
 {
 	
-  this ->quantidadeDeAssinante = qUser;
+  this-> quantidadeDeAssinante = qUser;
   this-> nomeDoAssinante = nUser;
   this-> idDoAssinante = idUser;
   this-> senhaDoUsuario = pUser;
@@ -60,3 +55,4 @@ void Assinante::printUser( ) const
 	cout << this->nomeDoAssinante << "\n";
 	
 }
+

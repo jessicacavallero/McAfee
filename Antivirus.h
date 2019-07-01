@@ -1,16 +1,15 @@
-
 #ifndef ANTIVIRUS_H
 #define ANTIVIRUS_H
 #include "Virus.h"
 #include "Assinante.h"
 #include "SoftwareDeSeguranca.h"
 
-#include <iostream>
 using std::cout;
 using std::cin;
 
 #include <string>
 using std::string;
+using std::ostream;
 
 class Antivirus : public SoftwareDeSeguranca 
 {
@@ -19,22 +18,22 @@ class Antivirus : public SoftwareDeSeguranca
 
 public:
  
-	Antivirus ( int, const string &, int , int, const string &);
     Antivirus ( );
 	Antivirus ( const Antivirus& );
 
-	virtual~Antivirus();
+	virtual ~Antivirus();
   
     bool verificarAmeaca( bool );
     bool fazerAtualizacoes ( bool );
     bool pontoDeRestauracao ( bool );
-    
+
     int idadeDeAcesso ( int );
     void criacaoDeSenha ();
     
-   
-	void verificarVirus( int );
-
+    const Antivirus &operator = ( const Antivirus &);
+    bool operator == (const Antivirus & ) const;
+    bool operator != (const Antivirus & );
+	
 	void adicionarVirus( const Virus &);
 	void imprimirVirus(  ) const;
     void adicionarUsuario( const Assinante & );
@@ -43,6 +42,13 @@ public:
 
 private:
 
+    bool ameacaA;
+    bool atualizacaoA;
+    bool pontoA; 
+    
+    int idade;
+    int senha;
+ 
     Assinante *user;
 	int soma;
 	int idUsuario;
@@ -57,7 +63,8 @@ private:
 	string eVirus;
 	int aVirus;
     
-    int senha;
+    
+    
 };
 
 

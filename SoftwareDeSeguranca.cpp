@@ -1,18 +1,16 @@
 #include "SoftwareDeSeguranca.h"
 
+const string SoftwareDeSeguranca::NOME = "Jessica Cavallero";
 
-SoftwareDeSeguranca::SoftwareDeSeguranca() // Construtor que recebe todos os argumentos
-
+SoftwareDeSeguranca::SoftwareDeSeguranca() 
 {
-
-	this-> resultadoAmeaca = 0;
+	this-> NOME ;
 	
 }
 
 SoftwareDeSeguranca::SoftwareDeSeguranca( const  SoftwareDeSeguranca &base )
 {
 
-	this-> resultadoAmeaca = base.resultadoAmeaca;
 
 }
 
@@ -23,10 +21,16 @@ SoftwareDeSeguranca::~SoftwareDeSeguranca()
 ostream &operator <<(ostream & print, const SoftwareDeSeguranca & softwareDeSeguranca )
 {
 
-    print << "A soma das perguntas foi :  " << softwareDeSeguranca.resultadoAmeaca;
+    print << "O nome é :  " << softwareDeSeguranca.NOME;
     
         return print;
  
+}
+
+
+void SoftwareDeSeguranca :: nome ()
+{
+    cout << "Criando por " << NOME;    
 }
 
 bool SoftwareDeSeguranca::operator != (const SoftwareDeSeguranca &right ) 
@@ -38,13 +42,16 @@ bool SoftwareDeSeguranca::operator != (const SoftwareDeSeguranca &right )
 
 const SoftwareDeSeguranca &SoftwareDeSeguranca::operator = ( const SoftwareDeSeguranca &right ) 
 {
-    //quantidadeDeAssinante = right.quantidadeDeAssinante;
+    NOME = right.NOME;
 	return *this;
 }
 
 
 bool SoftwareDeSeguranca::operator == ( const SoftwareDeSeguranca &right)const
 {
-    return true;
+    if ( NOME != right.NOME)
+		return false;
+        
+        return true;
 }
 

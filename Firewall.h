@@ -1,7 +1,14 @@
-
 #ifndef FIREWALL_H
 #define FIREWALL_H
 #include "SoftwareDeSeguranca.h"
+#include <iostream>
+#include <typeinfo>
+using std::cout;
+using std::cin;
+#include <vector>
+#include <string>
+using std::string;
+using std::ostream;
 
 
 class Firewall : public SoftwareDeSeguranca
@@ -11,12 +18,18 @@ class Firewall : public SoftwareDeSeguranca
 public:
 
     Firewall();
+    Firewall( string & , string &);
     Firewall ( const Firewall& );
-    virtual ~Firewall();
+    ~Firewall();
   
     bool verificarAmeaca( bool );
     bool fazerAtualizacoes ( bool );
     bool pontoDeRestauracao ( bool );
+    
+    void mostrarIp();
+    void bloquearAcessoNaRede();
+    void dadosDeRede();
+    void avaliar( SoftwareDeSeguranca *software);
     
     const Firewall &operator = ( const Firewall &);
     bool operator == (const Firewall & ) const;
@@ -24,13 +37,18 @@ public:
     
 private:
 
-    string ip; 
-    int ip3;
     
     bool ameacaF;
-    bool atualizacaof;
-    bool pontof;
+    bool atualizacaoF;
+    bool pontoF;
+    
+    bool bloqueio;
+    bool mostrar;
 
+    string ip;
+    string mascara;
+    
+    
 };
 
 #endif // FIREWALL_H

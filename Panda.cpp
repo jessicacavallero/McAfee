@@ -1,34 +1,27 @@
-#include "Kaspersky.h"
+#include "Panda.h"
 
-Kaspersky::Kaspersky()
+Panda::Panda()
 :Antivirus()
 {
 }
 
-Kaspersky::~Kaspersky()
+Panda::~Panda()
 {
 }
 
-Kaspersky::Kaspersky ( const Kaspersky &base )
-: Antivirus( base )
+ostream &operator <<(ostream & print, const Panda & panda )
 {
-
-    
-}
-
-
-ostream &operator <<(ostream & print, const Kaspersky & kaspersky )
-{
-    print << static_cast < Antivirus >( kaspersky );
+    print << static_cast< Antivirus >(panda);
     print << "A soma das perguntas foi :  " ;
     
         return print;
+ 
 }
 
 
-bool Kaspersky::verificarAmeaca( bool threat )
+bool Panda::verificarAmeaca( bool threatA )
 {
-    if ( ameacaKaspersky == true) 
+    if ( ameacaPanda == true) 
     {
         cout << "Procurando por vírus \n"; 
     }
@@ -38,9 +31,9 @@ bool Kaspersky::verificarAmeaca( bool threat )
     }
 }
 
-bool Kaspersky::fazerAtualizacoes ( bool updateA )
+bool Panda::fazerAtualizacoes ( bool updateA )
 {
-    if (atualizacaoKaspersky == true )
+    if (atualizacaoPanda == true )
     {
         
         cout << " Fazendo atualização no banco de dados do antivirus\n";
@@ -52,9 +45,9 @@ bool Kaspersky::fazerAtualizacoes ( bool updateA )
     
 }
 
-bool Kaspersky::pontoDeRestauracao ( bool spotA )
+bool Panda::pontoDeRestauracao ( bool spotA )
 {
-    if ( pontoKaspersky == true )
+    if ( pontoPanda == true )
     {
         cout << "Seu ponto de restauração está sendo feito \n ";
     }

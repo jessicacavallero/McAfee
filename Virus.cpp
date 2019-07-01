@@ -58,3 +58,4 @@ void Virus::printVirus( ) const
   cout << this->nomeDoVirus << "\n";
 	 
 }
+

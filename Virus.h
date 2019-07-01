@@ -18,7 +18,7 @@ public:
 	Virus( const string & = "", int = 0, const string & = "" , int = 0 );
 	Virus( int );
 	Virus (const Virus&);
-	virtual~Virus();
+	~Virus();
 	
 	void printVirus( ) const;
       

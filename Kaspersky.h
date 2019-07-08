@@ -25,8 +25,8 @@ public:
     bool fazerAtualizacoes ( bool );
     bool pontoDeRestauracao ( bool );
     
-    void quarentena();
-    void whiteList();
+    void quarentena( bool );
+    void whiteList( bool );
     
     const Kaspersky &operator = ( const Kaspersky &);
     bool operator == (const Kaspersky & ) const;
@@ -37,6 +37,9 @@ private:
     bool ameacaKaspersky;
     bool atualizacaoKaspersky;
     bool pontoKaspersky;
+    
+    bool mover;
+    bool permitido;
  
 };
 

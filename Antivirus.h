@@ -20,8 +20,7 @@ public:
  
     Antivirus ( );
 	Antivirus ( const Antivirus& );
-
-	virtual ~Antivirus();
+    virtual ~Antivirus();
   
     bool verificarAmeaca( bool );
     bool fazerAtualizacoes ( bool );
@@ -48,7 +47,7 @@ private:
     
     int idade;
     int senha;
- 
+    const static string NOME;
     Assinante *user;
 	int soma;
 	int idUsuario;

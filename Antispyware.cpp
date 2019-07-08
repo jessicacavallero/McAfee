@@ -1,9 +1,9 @@
 #include "Antispyware.h"
 
-Antispyware::Antispyware()
+Antispyware::Antispyware( )
 : SoftwareDeSeguranca(  )
 {
-    
+   
     this-> ameacaAn = true;
     this-> atualizacaoAn = true;
     this-> pontoAn = true;
@@ -11,6 +11,15 @@ Antispyware::Antispyware()
     this-> mostrar = true;
     
 }
+
+
+Antispyware::Antispyware( const string & nameProgram, const string &typeProgram )
+: SoftwareDeSeguranca(  )
+{
+    this-> nomeDosProgramas = nameProgram;
+    this-> tipoDePrograma = typeProgram;
+}
+
 
 Antispyware::Antispyware(const  Antispyware &origem )
 : SoftwareDeSeguranca( origem )
@@ -40,40 +49,26 @@ ostream &operator <<(ostream & print, const Antispyware & antispyware )
 bool Antispyware::verificarAmeaca( bool threatA )
 {
     if ( ameacaAn == true) 
-    {
         cout << "Procurando por programas infectados \n"; 
-    }
     else
-    {
         cout << "A verificação ficará para outra hora\n" ;
-    }
 }
-
 
 bool Antispyware::fazerAtualizacoes ( bool update )
 {
     if (atualizacaoAn == true )
-    {
-        
         cout << " Fazendo atualização\n";
-    }
     else
-    {
         cout << "Você cancelou a atualização\n";
-    }
-    
 }
 
 bool Antispyware::pontoDeRestauracao ( bool spot )
 {
     if ( pontoAn == true )
-    {
         cout << "Seu ponto de restauração está sendo feito \n ";
-    }
     else 
-    {
         cout << "Você não tem ponto de restauração\n";
-    }
+    
 }
 
 
@@ -103,11 +98,12 @@ void Antispyware::apagarProgramas( bool apagar )
     }
 }
 
-void Antispyware::informacoes()
+void Antispyware::printDados()
 {
     
-    cout << "O nome do programa é : " << nomeDosProgramas;
-    cout << "O tipo de programa é : " << tipoDePrograma;
+    cout << "O nome do programa é : " << nomeDosProgramas << "\n";
+    cout << "O tipo de programa é : " << tipoDePrograma << "\n";
+    cout << "\n";
     
 }
 

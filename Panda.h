@@ -24,6 +24,9 @@ public:
     bool fazerAtualizacoes ( bool );
     bool pontoDeRestauracao ( bool );
     
+    bool webcam( bool );
+    bool protecaoDoTeclado( bool );
+    
     const Panda &operator = ( const Panda &);
     bool operator == (const Panda & ) const;
     bool operator != (const Panda & );
@@ -34,7 +37,8 @@ private:
     bool atualizacaoPanda;
     bool pontoPanda;
 
- 
+    bool teclado;
+    bool camera;
 };
 
 #endif // PANDA_H

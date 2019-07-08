@@ -1,7 +1,9 @@
 #include "Antivirus.h"
 
+const string Antivirus::NOME = "Jessica Cavallero";
+
 Antivirus::Antivirus(  ) // Construtor que não recebe nenhum dos argumentos
-: SoftwareDeSeguranca( )
+: virus(), user(),SoftwareDeSeguranca( )
 {
     this-> nUsuario = " ";
 	this-> idUsuario = 0;
@@ -72,39 +74,25 @@ ostream &operator <<(ostream & print, const Antivirus & antivirus )
 bool Antivirus::verificarAmeaca( bool threat )
 {
     if ( ameacaA == true) 
-    {
         cout << "Procurando por vírus \n"; 
-    }
     else
-    {
         cout << "A verificação ficará para outra hora\n" ;
-    }
 }
 
 bool Antivirus::fazerAtualizacoes ( bool update )
 {
     if (atualizacaoA == true )
-    {
-        
         cout << " Fazendo atualização no banco de dados do antivirus\n";
-    }
     else
-    {
         cout << "Você cancelou a atualização\n";
-    }
-    
 }
 
 bool Antivirus::pontoDeRestauracao ( bool spot )
 {
     if ( pontoA == true )
-    {
         cout << "Seu ponto de restauração está sendo feito \n ";
-    }
     else 
-    {
         cout << "Você não tem ponto de restauração\n";
-    }
 }
 
 int Antivirus::idadeDeAcesso ( int age )

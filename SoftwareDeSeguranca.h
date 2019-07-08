@@ -25,20 +25,18 @@ public:
     virtual bool verificarAmeaca( bool ) = 0;
     virtual bool fazerAtualizacoes ( bool ) = 0;
     virtual bool pontoDeRestauracao ( bool  ) = 0;
-    
-    void nome();
-    
+
+    virtual void printDados (); 
     const SoftwareDeSeguranca &operator = ( const SoftwareDeSeguranca &);
     bool operator == (const SoftwareDeSeguranca & ) const;
     bool operator != (const SoftwareDeSeguranca & );
+    string &operator[] (int); 
+	string operator[] (int) const;
+
 	
     
 private:
 
-
-const static string NOME;
-
-   
 };
 
 #endif // SOFTWAREDESEGURANCA_HH

@@ -15,27 +15,23 @@ class Antispyware : public SoftwareDeSeguranca
         friend ostream &operator << ( ostream & , const Antispyware  & );
 
 public:
-
     Antispyware();
+    Antispyware( const string & , const string &);
     Antispyware ( const Antispyware& );
     ~Antispyware();
-    
+
     bool verificarAmeaca( bool );
     bool fazerAtualizacoes ( bool );
     bool pontoDeRestauracao ( bool );
     
     void mostrarProgramas( bool );
     void apagarProgramas( bool );
-    
-    void informacoes ();
+    void printDados();
     
     const Antispyware &operator = ( const Antispyware &);
     bool operator == (const Antispyware & ) const;
     bool operator != (const Antispyware & );
 	
-    
-  
-
 private:
 
     bool ameacaAn;
@@ -44,8 +40,6 @@ private:
   
     bool mostrar;
     bool apagar;
-
-
     string nomeDosProgramas;
     string tipoDePrograma;
 };

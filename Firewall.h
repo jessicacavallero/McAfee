@@ -18,7 +18,7 @@ class Firewall : public SoftwareDeSeguranca
 public:
 
     Firewall();
-    Firewall( string & , string &);
+    Firewall( const string & , const string &);
     Firewall ( const Firewall& );
     ~Firewall();
   
@@ -28,23 +28,20 @@ public:
     
     void mostrarIp();
     void bloquearAcessoNaRede();
-    void dadosDeRede();
-    void avaliar( SoftwareDeSeguranca *software);
-    
+    void printDados();
+   
     const Firewall &operator = ( const Firewall &);
     bool operator == (const Firewall & ) const;
     bool operator != (const Firewall & );
     
+    
 private:
 
-    
     bool ameacaF;
     bool atualizacaoF;
     bool pontoF;
-    
     bool bloqueio;
     bool mostrar;
-
     string ip;
     string mascara;
     

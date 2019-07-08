@@ -24,6 +24,9 @@ public:
     bool fazerAtualizacoes ( bool );
     bool pontoDeRestauracao ( bool );
     
+    void privateBrowsing( bool );
+    void bloqueiePropagandas( bool );
+    
     const McAfee &operator = ( const McAfee &);
     bool operator == (const McAfee & ) const;
     bool operator != (const McAfee & );
@@ -33,7 +36,10 @@ private:
     bool ameacaMcAfee;
     bool atualizacaoMcAfee;
     bool pontoMcAfee;
-
+    
+    bool privado;
+    bool bloquear;
+    
  
 };
 

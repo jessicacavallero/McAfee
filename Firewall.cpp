@@ -1,12 +1,5 @@
 #include "Firewall.h"
 
-Firewall::Firewall( string &ip, string &mask)
-: SoftwareDeSeguranca( )
-{
-    this-> ip = "";
-    this-> mascara = "";
-}
-
 Firewall::Firewall()
 : SoftwareDeSeguranca( )
 {
@@ -15,6 +8,14 @@ Firewall::Firewall()
     this-> pontoF = true;
     this-> mostrar = "";
     this-> bloqueio = false;
+}
+
+
+Firewall::Firewall( const string &ip, const string &mask)
+: SoftwareDeSeguranca( )
+{   
+    this->ip = ip;
+    this->mascara = mask;
 }
 
 Firewall::Firewall ( const Firewall &base )
@@ -45,39 +46,25 @@ ostream &operator <<(ostream & print, const Firewall & firewall )
 bool Firewall::verificarAmeaca( bool threat )
 {
     if ( ameacaF == true) 
-    {
         cout << "Procurando por intrusos na rede \n"; 
-    }
     else
-    {
         cout << "Sua varedura foi deixada  para deposi \n";
-    }
 }
 
 bool Firewall::fazerAtualizacoes ( bool update )
 {
     if ( atualizacaoF == true )
-    {
-        
         cout << " Fazendo atualização\n";
-    }
     else
-    {
         cout << "Você cancelou a atualização\n";
-    }
-    
 }
 
 bool Firewall::pontoDeRestauracao ( bool spot )
 {
     if ( pontoF == true )
-    {
         cout << "Seu ponto de restauração está sendo feito \n ";
-    }
     else 
-    {
         cout << "Você não tem ponto de restauração\n";
-    }
 }
 
 
@@ -104,30 +91,15 @@ void Firewall::bloquearAcessoNaRede()
     
 }
 
-void Firewall::dadosDeRede()
+void Firewall::printDados( )
 {
     
-   cout << "O Ip é :" << ip;
-   cout << "A mascara é :" << mascara;
-    
-    
+   cout << "O Ip é :" << ip << "\n";
+   cout << "A mascara é :" << mascara << "\n";
+   cout << "\n"; 
 }
 
-/*
-void Firewall::avaliar( SoftwareDeSeguranca *software)
-{
-    
-    software -> verificarAmeaca( bool  );
-    software -> fazerAtualizacoes( bool update  );
-    software -> pontoDeRestauracao ( bool spot );
-    
-    if ( typeid (*software).name() == typeid (Firewall).name() )
-    {
-        cout << "something"; 
-    }
-}
 
-**/
 bool Firewall::operator != (const Firewall &right ) 
 
 {
